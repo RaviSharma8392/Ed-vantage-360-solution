@@ -58,11 +58,11 @@ function Login() {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/login',
+        "https://ed-vantage-360-solution.onrender.com/api/login",
         formData,
         {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           withCredentials: true,
         }

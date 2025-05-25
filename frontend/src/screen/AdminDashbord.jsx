@@ -14,9 +14,12 @@ const AdminDashboard = () => {
   const fetchMessages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/contact", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://ed-vantage-360-solution.onrender.com/api/admin/contact",
+        {
+          withCredentials: true,
+        }
+      );
       setMessages(res.data.contacts);
     } catch (err) {
       console.error("Error fetching messages", err);
