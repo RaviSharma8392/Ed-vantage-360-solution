@@ -14,8 +14,11 @@ const app = express()
 const port = process.env.PORT
 
 app.use(cors({
-  origin: 'http://localhost:5175'||"https://edvantage360solution.netlify.app/",  // allow frontend origin
-  credentials: true                 // allow cookies (like JWT in httpOnly cookie)
+  origin: [
+    'http://localhost:5175',
+    'https://edvantage360solution.netlify.app'
+  ],
+  credentials: true
 }));
 
 // middelware
