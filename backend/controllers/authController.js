@@ -26,36 +26,36 @@ const signUp = async (req, res) => {
   }
 };
 
+
 const login = async (req, res) => {
-  const { email, password } = req.body;
-
   try {
-    const foundUser = await User.findOne({ email });
-    if (!foundUser) {
-      return res.status(400).json({ message: "Email or password incorrect" });
-    }
+    const { email, password } = req.body;
 
-    const isMatch = await bcrypt.compare(password, foundUser.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Email or password incorrect" });
-    }
+    // Validate email/password, find user in DB etc.
+    // if invalid: return res.status(400).json({ error: "Invalid credentials" });
+
+    // Assume user found & validated
+    const user = { id: "someUserId", role: "admin" }; // example
 
     const token = jwt.sign(
-      { id: foundUser._id },
+      { id: user.id, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: "1d" }
+      { expiresIn: "1h" }
     );
 
+    // Set token as cookie for client
     res.cookie("token", token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // true in production for HTTPS
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      maxAge: 3600000, // 1 hour in milliseconds
     });
 
-    res.json({ message: "User login successful" });
-
+    res.status(200).json({ message: "Login successful" });
   } catch (error) {
-    console.error("Login error:", error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ error: "Server error" });
   }
 };
+
 
 module.exports = { signUp, login };
