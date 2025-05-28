@@ -14,7 +14,9 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./screen/AdminDashbord";
 import AdminLayout from "./layouts/AdminLayout";
-
+import PricingPage from "./pages/PricingPage";
+import User from "./User";
+//
 const App = () => {
   return (
     <div>
@@ -32,9 +34,11 @@ const App = () => {
           <Route path="/team" element={<Team />} />
           <Route path="/services" element={<ServiceComponent />} />
           <Route path="/contact" element={<Contact />} />{" "}
+          <Route path="/pricing" element={<PricingPage />} />{" "}
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />{" "}
+          <Route path="/admin/users" element={<User />} />{" "}
         </Route>
       </Routes>
     </div>

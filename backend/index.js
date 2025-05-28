@@ -15,7 +15,7 @@ const port = process.env.PORT
 
 app.use(cors({
   origin: [
-    'http://localhost:5175',
+    'http://localhost:5173',
     'https://edvantage360solution.netlify.app'
   ],
   credentials: true

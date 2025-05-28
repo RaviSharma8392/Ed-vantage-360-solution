@@ -1,82 +1,85 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Training & Development",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     items: [
-      "Leadership Training",
-      "Teacher Training",
-      "Student Training",
-      "Life Skills Development",
+      "Leadership Programs for Principals and Coordinators",
+      "Mandatory CBSE & NEP 2020 Training for Teachers",
+      "Emotional Intelligence & Communication Skills",
+      "Personality Development for Students",
     ],
   },
   {
-    title: "Audits",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Academic Audits", "Financial Audits"],
-  },
-  {
-    title: "Competency Mapping",
+    title: "Audits & Competency Mapping",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Skill Gap Analysis", "Performance Assessment"],
+    items: [
+      "Academic & Financial Audits",
+      "Competency Mapping for Performance Enhancement",
+    ],
   },
   {
-    title: "Infrastructure Support",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Furniture", "Printing", "Facility Setup"],
-  },
-  {
-    title: "Excursions & Amenities",
-    image:
-      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Educational Tours", "Travel Services", "Canteen Management"],
-  },
-  {
-    title: "Smart Solutions",
+    title: "Infrastructure & Academic Solutions",
     image:
       "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Digital Classrooms", "Smart Panels"],
+    items: [
+      "Smart Classrooms & Lab Setup",
+      "Curriculum Design",
+      "School Furniture & Educational Tools",
+    ],
   },
   {
-    title: "Laboratory & Academic Support",
+    title: "Excursions & School Amenities",
     image:
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a9e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Classroom Setup", "Course Development", "Lab Design"],
+      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: [
+      "Domestic & International Educational Tours",
+      "Travel Management Services",
+      "Canteen & Hygiene Solutions",
+    ],
   },
   {
-    title: "Procurement Support",
+    title: "Digital Integration",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Placement Fairs", "Vocational Training Centres (VTCs)"],
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: ["Interactive Panels & Digital Boards", "ICT Lab Setup"],
   },
   {
-    title: "Media & Branding Solutions",
+    title: "Placement & Vocational Support",
     image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Brand Strategy", "Content Creation", "With Brain House"],
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: [
+      "Vocational Training Centers (VTCs)",
+      "Career Fairs & Higher Education Connects",
+    ],
   },
   {
-    title: "Recognition & Growth",
+    title: "Media & Branding",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Awards", "Certifications", "Educational Summits"],
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: ["School Promotions & Publications", "Online Presence Management"],
   },
   {
-    title: "Insurance Services",
+    title: "Recognition & Celebrations",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Student Insurance", "Staff Coverage"],
+      "https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: ["Awards & Leadership Summits", "Annual Felicitations"],
   },
   {
-    title: "Uniforms & School Essentials",
+    title: "Uniforms & Essentials",
     image:
-      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    items: ["Custom Uniforms", "Stationery Kits"],
+      "https://images.unsplash.com/photo-1592892142579-9ef7d7f5aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: ["Tailored School Uniforms", "Procurement of School Kits"],
+  },
+  {
+    title: "Insurance Solutions",
+    image:
+      "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    items: ["Custom Insurance Plans", "Staff & Student Well-being Coverage"],
   },
 ];
 
@@ -170,12 +173,11 @@ const ServiceComponent = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* <div className="mt-16 text-center">
-        <button className="px-8 py-3 border border-indigo-600 text-indigo-600 rounded-full font-medium hover:bg-indigo-50 transition-colors duration-300">
-          View All Services
-        </button>
-      </div> */}
+      <Link
+        to="/pricing"
+        className="flex  justify-center  mt-5 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+        View Pricing Details
+      </Link>
     </div>
   );
 };

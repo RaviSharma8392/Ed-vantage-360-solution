@@ -3,89 +3,91 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState(null);
-  const navigate = useNavigate();
+    const HOSt = import.meta.env.VITE_API_HOST;
 
-  const validateForm = () => {
-    const newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const [formData, setFormData] = useState({
+      email: "",
+      password: "",
+    });
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [message, setMessage] = useState(null);
+    const navigate = useNavigate();
 
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-    }
+    const validateForm = () => {
+      const newErrors = {};
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!formData.password.trim()) {
-      newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    }
+      if (!formData.email.trim()) {
+        newErrors.email = "Email is required";
+      } else if (!emailRegex.test(formData.email)) {
+        newErrors.email = "Please enter a valid email";
+      }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+      if (!formData.password.trim()) {
+        newErrors.password = "Password is required";
+      } else if (formData.password.length < 6) {
+        newErrors.password = "Password must be at least 6 characters";
+      }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({
         ...prev,
-        [name]: ""
+        [name]: value,
       }));
-    }
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage(null);
+      // Clear error when user starts typing
+      if (errors[name]) {
+        setErrors((prev) => ({
+          ...prev,
+          [name]: "",
+        }));
+      }
+    };
 
-    if (!validateForm()) return;
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setMessage(null);
 
-    setIsSubmitting(true);
+      if (!validateForm()) return;
 
-    try {
-      const res = await axios.post(
-        "https://ed-vantage-360-solution.onrender.com/api/login",
-        formData,
-        {
+      setIsSubmitting(true);
+
+      try {
+        const res = await axios.post(`${HOSt}/login`, formData, {
           headers: {
             "Content-Type": "application/json",
           },
           withCredentials: true,
+        });
+
+        setMessage({
+          type: "success",
+          text: "Login successful! Redirecting...",
+        });
+
+        // Store token in localStorage if present
+        if (res.data.token) {
+          localStorage.setItem("authToken", res.data.token);
         }
-      );
 
-      setMessage({ type: 'success', text: 'Login successful! Redirecting...' });
-      
-      // Store token in localStorage if present
-      if (res.data.token) {
-        localStorage.setItem('authToken', res.data.token);
+        // Redirect after 1.5 seconds
+        setTimeout(() => {
+          navigate("/admin");
+        }, 1500);
+      } catch (err) {
+        const errorText =
+          err.response?.data?.error || "Login failed. Please try again.";
+        setMessage({ type: "error", text: errorText });
+      } finally {
+        setIsSubmitting(false);
       }
-
-      // Redirect after 1.5 seconds
-      setTimeout(() => {
-        navigate('/admin');
-      }, 1500);
-    } catch (err) {
-      const errorText = err.response?.data?.error || 'Login failed. Please try again.';
-      setMessage({ type: 'error', text: errorText });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">

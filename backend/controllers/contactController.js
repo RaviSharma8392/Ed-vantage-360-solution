@@ -2,12 +2,13 @@ const ContactModel=require("../models/contactModel")
 
 // it's for saving contact data
  const contactMessage=async(req,res)=>{
-    try {    const {firstName,lastName,email,mobile, message}=req.body
+    try {    const {firstName,lastName,email,mobile,service, message}=req.body
     if(!email||!message||!mobile){ return res.status(500)
         res.json({error:"Email,Mobile and Message are required"})
 
     }
-    const NewContactData= new ContactModel({firstName,lastName,email,mobile, message})
+    const NewContactData= new ContactModel({firstName,lastName,email,mobile,service, message})
+    console.log(NewContactData)
     await NewContactData.save()
     res.status(201)
     // 201 code is used for creating data
@@ -36,4 +37,5 @@ res.status(500) .json({error:error})
 
     
 }
+
 module.exports={getAllContacts,contactMessage}

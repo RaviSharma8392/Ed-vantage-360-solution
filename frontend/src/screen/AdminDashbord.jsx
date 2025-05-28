@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FiMail, FiPhone, FiUser, FiMessageSquare, FiRefreshCw } from "react-icons/fi";
+import {
+  FiMail,
+  FiPhone,
+  FiUser,
+  FiMessageSquare,
+  FiRefreshCw,
+} from "react-icons/fi";
 
 const AdminDashboard = () => {
+  const HOSt = import.meta.env.VITE_API_HOST;
+  // console.log(HOSt);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,12 +22,9 @@ const AdminDashboard = () => {
   const fetchMessages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get(
-        "https://ed-vantage-360-solution.onrender.com/api/admin/contact",
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get(`${HOSt}/admin/contact`, {
+        withCredentials: true,
+      });
       setMessages(res.data.contacts);
     } catch (err) {
       console.error("Error fetching messages", err);
@@ -34,7 +39,9 @@ const AdminDashboard = () => {
       msg.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       msg.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       msg.mobile.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      msg.message.toLowerCase().includes(searchTerm.toLowerCase())
+      msg.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (msg.service &&
+        msg.service.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
@@ -42,8 +49,12 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Admin Dashboard</h1>
-            <p className="text-gray-600 mt-2">View and manage all contact messages</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+              Admin Dashboard
+            </h1>
+            <p className="text-gray-600 mt-2">
+              View and manage all contact messages
+            </p>
           </div>
           <div className="mt-4 md:mt-0 flex space-x-3">
             <div className="relative">
@@ -60,8 +71,7 @@ const AdminDashboard = () => {
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                  stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -73,8 +83,7 @@ const AdminDashboard = () => {
             </div>
             <button
               onClick={fetchMessages}
-              className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-            >
+              className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
               <FiRefreshCw className="mr-2" />
               Refresh
             </button>
@@ -91,37 +100,31 @@ const AdminDashboard = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       <div className="flex items-center">
                         <FiUser className="mr-2" />
                         Name
                       </div>
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       <div className="flex items-center">
                         <FiMail className="mr-2" />
                         Email
                       </div>
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       <div className="flex items-center">
                         <FiPhone className="mr-2" />
                         Mobile
                       </div>
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <div className="flex items-center">
+                        <FiMessageSquare className="mr-2" />
+                        Service
+                      </div>
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       <div className="flex items-center">
                         <FiMessageSquare className="mr-2" />
                         Message
@@ -133,8 +136,11 @@ const AdminDashboard = () => {
                   {filteredMessages.map((msg, index) => (
                     <tr
                       key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-gray-50 hover:bg-gray-100"}
-                    >
+                      className={
+                        index % 2 === 0
+                          ? "bg-white"
+                          : "bg-gray-50 hover:bg-gray-100"
+                      }>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
@@ -154,7 +160,14 @@ const AdminDashboard = () => {
                         <div className="text-sm text-gray-900">{msg.email}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{msg.mobile}</div>
+                        <div className="text-sm text-gray-900">
+                          {msg.mobile}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {msg.service}
+                        </div>
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900 max-w-xs break-words">
@@ -173,8 +186,7 @@ const AdminDashboard = () => {
                 className="mx-auto h-12 w-12 text-gray-400"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+                stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -182,7 +194,9 @@ const AdminDashboard = () => {
                   d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h3 className="mt-2 text-lg font-medium text-gray-900">No messages found</h3>
+              <h3 className="mt-2 text-lg font-medium text-gray-900">
+                No messages found
+              </h3>
               <p className="mt-1 text-sm text-gray-500">
                 {searchTerm
                   ? "Try adjusting your search or filter to find what you're looking for."
@@ -195,7 +209,8 @@ const AdminDashboard = () => {
         {filteredMessages.length > 0 && (
           <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
             <div>
-              Showing <span className="font-medium">{filteredMessages.length}</span> of{" "}
+              Showing{" "}
+              <span className="font-medium">{filteredMessages.length}</span> of{" "}
               <span className="font-medium">{messages.length}</span> messages
             </div>
             <div className="flex space-x-2">

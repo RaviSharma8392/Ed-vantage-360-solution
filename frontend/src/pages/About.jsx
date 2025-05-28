@@ -94,19 +94,24 @@ const About = () => {
           {/* Text */}
           <div className="space-y-6">
             <p className="text-gray-700 text-base sm:text-lg">
-              <strong>EdVantage 360 Solutions</strong> is a one-stop partner for
-              educational institutions and organizations seeking comprehensive,
-              end-to-end support. We specialize in delivering holistic solutions
-              across every dimension of the education ecosystem—from leadership
-              development to infrastructure, branding, and beyond.
+              <strong>EdVantage 360 Solutions</strong> is a forward-thinking,
+              women-led educational consultancy built on the collective
+              expertise of four passionate educators with over 30 years of
+              individual experience in teaching, school leadership, curriculum
+              development, and institutional growth. Together, they have created
+              a platform that empowers educational institutions to meet the
+              challenges of a rapidly evolving academic landscape.
             </p>
             <p className="text-gray-700 text-base sm:text-lg">
-              Our mission is to empower institutions by addressing every
-              critical need under one roof, ensuring seamless integration,
-              quality assurance, and future-readiness. Whether you're a school,
-              college, training institute, or educational startup, we offer
-              tailored services that align with national priorities like the NEP
-              2020 and global best practices.
+              With deep roots in pedagogy and a vision for future-ready
+              learning, EdVantage 360 Solutions offers a vibrant blend of
+              innovation, tradition, and excellence. We serve as a one-stop
+              solution hub for schools and educational bodies, supporting them
+              across all key pillars—academic development, training, operational
+              excellence, and recognition. What sets us apart is our unwavering
+              commitment to building holistic, learner-centric ecosystems where
+              every stakeholder—be it a teacher, student, leader, or parent—is
+              empowered to thrive.
             </p>
 
             {/* <Link
@@ -125,9 +130,11 @@ const About = () => {
               Our Mission
             </h2>
             <p className="text-gray-700 text-base sm:text-lg">
-              To provide 360° support to educational institutions by delivering
-              innovative, impactful, and integrated solutions that enhance
-              academic outcomes and operational excellence.
+              - To deliver end-to-end educational services under one roof
+              <br />
+              - To inspire lifelong learning and professional excellence
+              <br />- To align schools with global standards while nurturing
+              local values
             </p>
           </aside>
           <aside>
@@ -135,9 +142,9 @@ const About = () => {
               Our Vision
             </h2>
             <p className="text-gray-700 text-base sm:text-lg">
-              To be the most trusted partner for educational transformation,
-              helping institutions align with evolving standards and unlock
-              their full potential.
+              To revolutionize education support services by being the most
+              trusted and impactful partner for institutions aiming for holistic
+              growth, quality assurance, and future-readiness.
             </p>
           </aside>
         </div>

@@ -31,28 +31,37 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Validate email/password, find user in DB etc.
-    // if invalid: return res.status(400).json({ error: "Invalid credentials" });
+    // Find user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
 
-    // Assume user found & validated
-    const user = { id: "someUserId", role: "admin" }; // example
+    // Compare password hash
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
 
+    // Create JWT token payload (include role if you have it)
     const token = jwt.sign(
-      { id: user.id, role: user.role },
+      { id: user._id, role: user.role || 'user' },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 
-    // Set token as cookie for client
+    // Set token as httpOnly cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // true in production for HTTPS
+      secure: process.env.NODE_ENV === "production",  // HTTPS only in production
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-      maxAge: 3600000, // 1 hour in milliseconds
+      maxAge: 3600000, // 1 hour
     });
 
     res.status(200).json({ message: "Login successful" });
+
   } catch (error) {
+    console.error("Login error:", error);
     res.status(500).json({ error: "Server error" });
   }
 };

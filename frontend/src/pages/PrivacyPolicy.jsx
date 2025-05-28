@@ -11,7 +11,9 @@ const PrivacyPolicy = () => {
     <div className="max-w-5xl mt-10 mx-auto px-6 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 mt-2">Last Updated: {lastUpdated}</p>
+        <p className="text-sm text-gray-500 mt-2">
+          Last Updated: {lastUpdated}
+        </p>
       </div>
 
       <section className="mb-10">
@@ -19,14 +21,20 @@ const PrivacyPolicy = () => {
           Our Commitment to Your Privacy
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          At EdVantage 360 Solutions, we uphold our mission to empower educational excellence by protecting your personal data with the same rigor we apply to transforming learning ecosystems. This policy outlines how we collect, use, and safeguard information in alignment with global data protection standards.
+          At EdVantage 360 Solutions, we uphold our mission to empower
+          educational excellence by protecting your personal data with the same
+          rigor we apply to transforming learning ecosystems. This policy
+          outlines how we collect, use, and safeguard information in alignment
+          with global data protection standards.
         </p>
       </section>
 
       <SectionHeader title="1. Information We Collect" />
 
       <section className="mb-10">
-        <h3 className="text-xl font-medium text-blue-700 mb-2">A. From Educational Institutions:</h3>
+        <h3 className="text-xl font-medium text-blue-700 mb-2">
+          A. From Educational Institutions:
+        </h3>
         <ul className="list-disc list-inside text-gray-700 mb-4">
           <li>Contact details of administrators</li>
           <li>Institutional documents for academic audits</li>
@@ -34,7 +42,9 @@ const PrivacyPolicy = () => {
           <li>Digital infrastructure details</li>
         </ul>
 
-        <h3 className="text-xl font-medium text-blue-700 mt-6 mb-2">B. From Educators & Students:</h3>
+        <h3 className="text-xl font-medium text-blue-700 mt-6 mb-2">
+          B. From Educators & Students:
+        </h3>
         <ul className="list-disc list-inside text-gray-700">
           <li>Professional qualifications</li>
           <li>Learning analytics</li>
@@ -54,15 +64,21 @@ const PrivacyPolicy = () => {
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 px-4 border-b">Delivering academic audit reports</td>
+              <td className="py-2 px-4 border-b">
+                Delivering academic audit reports
+              </td>
               <td className="py-2 px-4 border-b">Contractual obligation</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="py-2 px-4 border-b">Customizing teacher training programs</td>
+              <td className="py-2 px-4 border-b">
+                Customizing teacher training programs
+              </td>
               <td className="py-2 px-4 border-b">Legitimate interest</td>
             </tr>
             <tr>
-              <td className="py-2 px-4 border-b">NEP 2020 compliance consulting</td>
+              <td className="py-2 px-4 border-b">
+                NEP 2020 compliance consulting
+              </td>
               <td className="py-2 px-4 border-b">Explicit consent</td>
             </tr>
           </tbody>
@@ -72,13 +88,17 @@ const PrivacyPolicy = () => {
       <SectionHeader title="3. Data Sharing & Protection" />
 
       <section className="mb-10">
-        <h4 className="text-lg font-semibold text-green-600 mb-2">We only share data with:</h4>
+        <h4 className="text-lg font-semibold text-green-600 mb-2">
+          We only share data with:
+        </h4>
         <ul className="list-disc list-inside text-gray-700 mb-4">
           <li>Accredited partner trainers (under NDAs)</li>
           <li>Government bodies for NEP compliance</li>
         </ul>
 
-        <h4 className="text-lg font-semibold text-green-600 mb-2">Security Measures:</h4>
+        <h4 className="text-lg font-semibold text-green-600 mb-2">
+          Security Measures:
+        </h4>
         <ol className="list-decimal list-inside text-gray-700">
           <li>AES-256 encryption for all stored data</li>
           <li>Annual penetration testing</li>
@@ -97,9 +117,11 @@ const PrivacyPolicy = () => {
 
       <div className="bg-gray-100 p-4 rounded mb-10">
         <p className="text-gray-700">
-          <strong>Submit requests to:</strong>{' '}
-          <a href="mailto:dpo@edvantage360.com" className="text-blue-600 underline">
-            dpo@edvantage360.com
+          <strong>Submit requests to:</strong>{" "}
+          <a
+            href="mailto: director.edvantage360@gmail.com"
+            className="text-blue-600 underline">
+            director.edvantage360@gmail.com
           </a>
         </p>
       </div>
@@ -109,8 +131,10 @@ const PrivacyPolicy = () => {
           "Empowering education through responsible data stewardship"
         </h3>
         <p className="text-gray-600">
-          <strong>EdVantage 360 Solutions</strong><br />
-          [Physical Address] | [Email] | [Phone]
+          <strong>EdVantage 360 Solutions</strong>
+          <br />
+          Address: B2/901, Cherry County, Techzone - IV, Greater Noida West,
+          Gautam Budh Nagar – 201301 | edvantage360.info@gmail.com | 9813198272
         </p>
       </div>
     </div>

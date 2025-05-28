@@ -2,11 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Contact = () => {
+  const HOST = import.meta.env.VITE_API_HOST;
+
+  const services = [
+    "Online Teacher Training",
+    "On-Site Workshops",
+    "Custom Programs",
+    "Curriculum Development",
+    "Educational Consulting",
+    "Other",
+  ];
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     mobile: "",
+    service: "",
     message: "",
   });
 
@@ -33,6 +45,7 @@ const Contact = () => {
     if (formData.mobile && !phoneRegex.test(formData.mobile)) {
       newErrors.mobile = "Please enter a valid 10-digit phone number";
     }
+    if (!formData.service) newErrors.service = "Please select a service";
     if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
@@ -65,7 +78,8 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "https://ed-vantage-360-solution.onrender.com/api/contact",
+        `${HOST}/contact`,
+
         formData,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -79,6 +93,7 @@ const Contact = () => {
         lastName: "",
         email: "",
         mobile: "",
+        service: "",
         message: "",
       });
     } catch (error) {
@@ -218,6 +233,34 @@ const Contact = () => {
                     <p className="mt-2 text-sm text-red-600">{errors.mobile}</p>
                   )}
                 </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-medium text-gray-700">
+                  Service Interested In *
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className={`mt-1 block w-full rounded-md shadow-sm py-3 px-4 border ${
+                    errors.service
+                      ? "border-red-300 focus:ring-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  }`}>
+                  <option value="">Select a service</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
+                {errors.service && (
+                  <p className="mt-2 text-sm text-red-600">{errors.service}</p>
+                )}
               </div>
 
               <div>

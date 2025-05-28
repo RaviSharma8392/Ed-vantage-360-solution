@@ -15,9 +15,13 @@ const contactSchema=Schema({
         type:Number,
         required:true
     }  , 
-    email:{type:String,
+      email:{type:String,
         required:true
     },
+    service:{type:String,
+        required:true
+    },
+
     message:{type:String,
         required:true
     },
