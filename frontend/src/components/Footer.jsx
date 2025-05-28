@@ -21,7 +21,7 @@ const Footer = () => {
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const validEmail = emailRegex.test(email);
+    const validEmail = emailRegex.test(email.userEmail);
     if (!validEmail) window.alert("please write correct email!");
 
     try {
