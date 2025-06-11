@@ -30,6 +30,7 @@ const signUp = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(email)
 
     // Find user by email
     const user = await User.findOne({ email });
@@ -50,13 +51,12 @@ const login = async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    // Set token as httpOnly cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",  // HTTPS only in production
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-      maxAge: 3600000, // 1 hour
-    });
+  httpOnly: true, // Prevent JavaScript access – safer
+  secure: false, // Allow HTTP for localhost during development
+  sameSite: "lax", // Safer default for development
+  maxAge: 3600000, // 1 hour
+});
 
     res.status(200).json({ message: "Login successful" });
 
