@@ -165,7 +165,7 @@ const Footer = () => {
             {[
               { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
               { icon: <FaTwitter />, href: "#", label: "Twitter" },
-              { icon: <FaInstagram />, href: "#", label: "Instagram" },
+              { icon: <FaInstagram />, href: "https://www.instagram.com/stories/edvantage_360_solutions/3666989385456080024?utm_source=ig_story_item_share&igsh=MWRiNmcxYTdxNjVldw== ", label: "Instagram" },
               { icon: <FaFacebookF />, href: "#", label: "Facebook" },
               { icon: <FaYoutube />, href: "#", label: "YouTube" },
             ].map((social, index) => (
