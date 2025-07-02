@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "8168084274"; // Replace with your number (include country code if needed)
+  const phoneNumber = "8700356606"; // Replace with your number (include country code if needed)
   const message = encodeURIComponent(
     "Hi, I am redirected from your website and would like to make an enquiry."
   );
