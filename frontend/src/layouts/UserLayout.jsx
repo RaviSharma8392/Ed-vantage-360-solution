@@ -6,11 +6,12 @@ import Footer from '../components/Footer'
 const Layout = () => {
   return (
     <div>
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
+      <Navbar />
+      <Outlet />
+
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default Layout

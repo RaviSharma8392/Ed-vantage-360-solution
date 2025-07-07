@@ -71,11 +71,6 @@ function Login() {
           text: "Login successful! Redirecting...",
         });
 
-        // Store token in localStorage if present
-        if (res.data.token) {
-          localStorage.setItem("authToken", res.data.token);
-        }
-
         // Redirect after 1.5 seconds
         setTimeout(() => {
           navigate("/admin");

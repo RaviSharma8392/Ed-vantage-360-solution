@@ -117,7 +117,7 @@ const Header = () => {
       <div className="text-center max-w-xl">
         <img
           src="LOGO[1].png"
-          alt="EdVantage 360 Logo"
+          alt="EdVantage 360° SolutionsLogo"
           className="mx-auto mb-6 w-60 rounded-full shadow-lg border border-orange-400"
         />
         <motion.div

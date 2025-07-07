@@ -1,28 +1,39 @@
-import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi";
+import {
+  FaFacebookF,
+  FaYoutube,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import {
+  HiOutlineMail,
+  HiOutlinePhone,
+  HiOutlineLocationMarker,
+} from "react-icons/hi";
 import { FiClock } from "react-icons/fi";
 import { SiVisa, SiMastercard, SiPaypal, SiGooglepay } from "react-icons/si";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+
 const Footer = () => {
   const HOST = import.meta.env.VITE_API_HOST;
-
+  const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState({ userEmail: "" });
-  // const [message,setMessage]=useState()
+
   const handelChange = (e) => {
     const { name, value } = e.target;
     setEmail((prev) => ({ ...prev, [name]: value }));
   };
+
   const submitEmail = async (e) => {
     e.preventDefault();
     if (!email.userEmail) {
       return window.alert("please write email!");
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     const validEmail = emailRegex.test(email.userEmail);
-    if (!validEmail) window.alert("please write correct email!");
+    if (!validEmail) return window.alert("please write correct email!");
 
     try {
       const res = await axios.post(`${HOST}/newsLetter`, email, {
@@ -30,12 +41,12 @@ const Footer = () => {
       });
       console.log(res);
       setEmail({ userEmail: "" });
-      console.log(email);
-      setEmail({
-        userEmail: "",
-      });
-    } catch (error) {}
+      setIsOpen(true);
+    } catch (error) {
+      console.error("Newsletter subscription failed", error);
+    }
   };
+
   return (
     <footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-7xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -44,12 +55,12 @@ const Footer = () => {
           <div className="flex items-center space-x-3">
             <img
               src="/Logo.png"
-              alt="EdVantage 360 Solutions Logo"
+              alt="EdVantage 360° Solutions Logo"
               className="h-12 w-auto"
               loading="lazy"
             />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-green-600">
-              EdVantage 360
+              EdVantage 360° Solutions
             </span>
           </div>
           <p className="text-gray-600 leading-relaxed">
@@ -72,39 +83,27 @@ const Footer = () => {
               />
               <button
                 onClick={submitEmail}
-                className="  text-white px-4 py-3  bg-green-500 hover:bg-orange-400 transition-opacity text-sm font-medium">
+                className="text-white px-4 py-3 bg-green-500 hover:bg-orange-400 transition-opacity text-sm font-medium">
                 Join
               </button>
             </div>
           </div>
         </div>
 
-        {/* Quick Links */}
-        {/* <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-6 pb-2 border-b border-orange-500">
-            Explore
-          </h3>
-          <ul className="space-y-3">
-            {[
-              // { label: "Services", href: "/services" },
-              // { label: "Case Studies", href: "/case-studies" },
-              // { label: "Resources", href: "/resources" },
-              // // { label: "Blog", href: "/blog" },
-
-              { label: "FAQ", href: "/faq" },
-            ].map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.href}
-                  className="text-gray-600 hover:text-green-600 hover:underline transition-colors flex items-center group">
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    {link.label}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div> */}
+        {/* Popup */}
+        {isOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm w-full">
+              <h2 className="text-xl font-semibold mb-4">Thank you!</h2>
+              <p className="mb-4">You’ve successfully subscribed.</p>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Contact Info */}
         <div>
@@ -136,9 +135,9 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <HiOutlineMail className="shrink-0 text-orange-500" size={18} />
               <a
-                href="mailto:info@edvantage360.com"
+                href="mailto:edvantage360.info@gmail.com"
                 className="text-gray-600 hover:text-green-600 hover:underline transition-colors">
-                edvantage360.info@gmail.com{" "}
+                edvantage360.info@gmail.com
               </a>
             </div>
 
@@ -156,7 +155,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Social & Payments */}
+        {/* Social & Payment Icons */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-6 pb-2 border-b border-orange-500">
             Connect
@@ -185,42 +184,43 @@ const Footer = () => {
           <div className="space-y-3">
             <h4 className="font-medium text-gray-900">Payment Methods</h4>
             <div className="flex gap-3">
-              <div className="bg-white p-2 rounded-lg shadow-sm">
-                <SiVisa className="text-blue-900" size={24} />
-              </div>
-              <div className="bg-white p-2 rounded-lg shadow-sm">
-                <SiMastercard className="text-red-600" size={24} />
-              </div>
-              <div className="bg-white p-2 rounded-lg shadow-sm">
-                <SiPaypal className="text-blue-600" size={24} />
-              </div>
-              <div className="bg-white p-2 rounded-lg shadow-sm">
-                <SiGooglepay className="text-gray-800" size={24} />
-              </div>
+              {[SiVisa, SiMastercard, SiPaypal, SiGooglepay].map((Icon, i) => (
+                <div key={i} className="bg-white p-2 rounded-lg shadow-sm">
+                  <Icon className="text-gray-800" size={24} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="max-w-7xl mx-auto border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      {/* Copyright + Developer Credit */}
+      <div className="max-w-7xl mx-auto border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-gray-500">
         <p>
-          © {new Date().getFullYear()} EdVantage 360 Solutions. All rights
+          © {new Date().getFullYear()} EdVantage 360° Solutions. All rights
           reserved.
         </p>
-        <div className="flex gap-4 mt-4 md:mt-0">
+        <p>
+          Developed by{" "}
+          <a
+            href="https://ravi-portfolio-web.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-600 hover:underline">
+            Ravi Sharma
+          </a>
+        </p>
+        <div className="flex gap-4">
           <NavLink
             to="/privacy"
             className="hover:text-green-600 hover:underline">
             Privacy Policy
           </NavLink>
-
           <NavLink
             to="/cookies"
             className="hover:text-green-600 hover:underline">
             Cookie Policy
           </NavLink>
-
           <NavLink to="/terms" className="hover:text-green-600 hover:underline">
             Terms of Service
           </NavLink>

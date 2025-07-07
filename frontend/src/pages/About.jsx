@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 const About = () => {
@@ -41,7 +41,7 @@ const About = () => {
         {/* Heading */}
         <header className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-green-600 mb-4">
-            About EdVantage 360 Solutions
+            About EdVantage 360° Solutions
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             Empowering educational institutions with comprehensive, integrated
@@ -94,7 +94,7 @@ const About = () => {
           {/* Text */}
           <div className="space-y-6">
             <p className="text-gray-700 text-base sm:text-lg">
-              <strong>EdVantage 360 Solutions</strong> is a forward-thinking,
+              <strong>EdVantage 360° Solutions</strong> is a forward-thinking,
               women-led educational consultancy built on the collective
               expertise of four passionate educators with over 30 years of
               individual experience in teaching, school leadership, curriculum
@@ -104,7 +104,7 @@ const About = () => {
             </p>
             <p className="text-gray-700 text-base sm:text-lg">
               With deep roots in pedagogy and a vision for future-ready
-              learning, EdVantage 360 Solutions offers a vibrant blend of
+              learning, EdVantage 360° Solutions offers a vibrant blend of
               innovation, tradition, and excellence. We serve as a one-stop
               solution hub for schools and educational bodies, supporting them
               across all key pillars—academic development, training, operational

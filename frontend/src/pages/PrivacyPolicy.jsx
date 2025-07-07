@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const PrivacyPolicy = () => {
-  const lastUpdated = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const lastUpdated = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
           Our Commitment to Your Privacy
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          At EdVantage 360 Solutions, we uphold our mission to empower
+          At EdVantage 360° SolutionsSolutions, we uphold our mission to empower
           educational excellence by protecting your personal data with the same
           rigor we apply to transforming learning ecosystems. This policy
           outlines how we collect, use, and safeguard information in alignment
@@ -131,7 +131,7 @@ const PrivacyPolicy = () => {
           "Empowering education through responsible data stewardship"
         </h3>
         <p className="text-gray-600">
-          <strong>EdVantage 360 Solutions</strong>
+          <strong>EdVantage 360° Solutions</strong>
           <br />
           Address: B2/901, Cherry County, Techzone - IV, Greater Noida West,
           Gautam Budh Nagar – 201301 | edvantage360.info@gmail.com | 9813198272

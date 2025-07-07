@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const CookiePrivacyPolicy = () => {
-  const effectiveDate = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  const effectiveDate = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -14,10 +14,13 @@ const CookiePrivacyPolicy = () => {
         <h1 className="text-4xl font-bold text-gray-800">
           Cookie & Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500 mt-2">Effective Date: {effectiveDate}</p>
+        <p className="text-sm text-gray-500 mt-2">
+          Effective Date: {effectiveDate}
+        </p>
         <p className="mt-4 text-gray-700 text-lg max-w-2xl mx-auto">
-          This policy explains how EdVantage 360 Solutions uses cookies and protects
-          any information that you share with us during your digital engagement.
+          This policy explains how EdVantage 360° SolutionsSolutions uses
+          cookies and protects any information that you share with us during
+          your digital engagement.
         </p>
       </div>
 
@@ -29,9 +32,10 @@ const CookiePrivacyPolicy = () => {
             1. Introduction
           </h2>
           <p className="text-gray-700">
-            We are committed to safeguarding the privacy of our users. This policy
-            outlines our practices regarding the use of cookies and the protection of
-            personally identifiable information (PII) collected through our platform.
+            We are committed to safeguarding the privacy of our users. This
+            policy outlines our practices regarding the use of cookies and the
+            protection of personally identifiable information (PII) collected
+            through our platform.
           </p>
         </section>
 
@@ -41,13 +45,21 @@ const CookiePrivacyPolicy = () => {
             2. What Are Cookies?
           </h2>
           <p className="text-gray-700 mb-2">
-            Cookies are small text files placed on your device when you visit our site.
-            They help us improve your user experience, monitor performance, and analyze usage.
+            Cookies are small text files placed on your device when you visit
+            our site. They help us improve your user experience, monitor
+            performance, and analyze usage.
           </p>
           <ul className="list-disc list-inside text-gray-700">
-            <li><strong>Essential Cookies:</strong> Required for platform functionality</li>
-            <li><strong>Analytics Cookies:</strong> Track usage to improve content</li>
-            <li><strong>Preference Cookies:</strong> Remember your settings</li>
+            <li>
+              <strong>Essential Cookies:</strong> Required for platform
+              functionality
+            </li>
+            <li>
+              <strong>Analytics Cookies:</strong> Track usage to improve content
+            </li>
+            <li>
+              <strong>Preference Cookies:</strong> Remember your settings
+            </li>
           </ul>
         </section>
 
@@ -72,9 +84,7 @@ const CookiePrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold text-teal-700 border-b pb-2 mb-4">
             4. How We Use This Information
           </h2>
-          <p className="text-gray-700">
-            Data is used to:
-          </p>
+          <p className="text-gray-700">Data is used to:</p>
           <ul className="list-disc list-inside text-gray-700 mt-2">
             <li>Improve educational service delivery</li>
             <li>Personalize platform experience</li>
@@ -89,8 +99,8 @@ const CookiePrivacyPolicy = () => {
           </h2>
           <p className="text-gray-700">
             We may use trusted third-party tools such as Google Analytics for
-            performance monitoring. These providers have their own privacy policies,
-            and we encourage reviewing them independently.
+            performance monitoring. These providers have their own privacy
+            policies, and we encourage reviewing them independently.
           </p>
         </section>
 
@@ -100,8 +110,12 @@ const CookiePrivacyPolicy = () => {
             6. Your Rights and Control
           </h2>
           <ul className="list-disc list-inside text-gray-700 mt-2">
-            <li>You may accept or decline cookies via your browser settings.</li>
-            <li>You can request access to or deletion of your personal data.</li>
+            <li>
+              You may accept or decline cookies via your browser settings.
+            </li>
+            <li>
+              You can request access to or deletion of your personal data.
+            </li>
             <li>We honor Do Not Track (DNT) signals where supported.</li>
           </ul>
         </section>
@@ -112,8 +126,9 @@ const CookiePrivacyPolicy = () => {
             Important Notice
           </h3>
           <p className="text-blue-900">
-            We do not sell or lease your personal information to third parties. All
-            data is processed in accordance with applicable data protection laws.
+            We do not sell or lease your personal information to third parties.
+            All data is processed in accordance with applicable data protection
+            laws.
           </p>
         </section>
 
@@ -121,8 +136,12 @@ const CookiePrivacyPolicy = () => {
         <div className="text-center mt-16">
           <h3 className="text-xl font-semibold mb-2">Have Privacy Concerns?</h3>
           <p className="text-gray-700">
-            Reach out to our data protection officer at{' '}
-            <a href="mailto:privacy@edvantage360.com" className="text-blue-600 underline">privacy@edvantage360.com</a>{' '}
+            Reach out to our data protection officer at{" "}
+            <a
+              href="mailto:privacy@edvantage360.com"
+              className="text-blue-600 underline">
+              privacy@edvantage360.com
+            </a>{" "}
             or call +1 (555) 360-2025
           </p>
         </div>

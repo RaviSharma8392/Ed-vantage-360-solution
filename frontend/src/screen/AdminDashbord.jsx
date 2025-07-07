@@ -10,7 +10,6 @@ import {
 
 const AdminDashboard = () => {
   const HOSt = import.meta.env.VITE_API_HOST;
-  // console.log(HOSt);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");

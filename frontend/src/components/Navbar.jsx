@@ -41,8 +41,8 @@ const phoneNumber = "918700356606";
             </button>
 
             <div className="font-[Nunito] text-lg font-extrabold tracking-wide text-center flex-1">
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-green-600">
-                EdVantage 360
+              <span className=" hidden text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-green-600">
+                EdVantage 360° Solutions{" "}
               </span>
             </div>
 
@@ -63,12 +63,12 @@ const phoneNumber = "918700356606";
                 <div className="flex items-center space-x-3">
                   <img
                     src="/Logo.png"
-                    alt="EdVantage 360 Solutions Logo"
+                    alt="EdVantage 360° SolutionsSolutions Logo"
                     className="h-12 w-auto"
                     loading="lazy"
                   />
                   <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-green-600">
-                    EdVantage 360
+                    EdVantage 360° Solutions{" "}
                   </span>
                 </div>
               </div>

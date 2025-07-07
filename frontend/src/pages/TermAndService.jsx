@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const TermsOfService = () => {
-  const effectiveDate = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const effectiveDate = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -77,7 +77,7 @@ const TermsOfService = () => {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-700 mb-2">
-              By engaging with EdVantage 360 Solutions' services, institutions
+              By engaging with EdVantage 360° Solutions' services, institutions
               agree to:
             </p>
             <ol className="list-decimal list-inside text-gray-700 space-y-1">
