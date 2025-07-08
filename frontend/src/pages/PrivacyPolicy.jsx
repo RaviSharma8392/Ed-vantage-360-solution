@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
           Our Commitment to Your Privacy
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          At EdVantage 360° SolutionsSolutions, we uphold our mission to empower
+          At EdVantage 360° Solutions, we uphold our mission to empower
           educational excellence by protecting your personal data with the same
           rigor we apply to transforming learning ecosystems. This policy
           outlines how we collect, use, and safeguard information in alignment

@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const ShowText = () => {
   const [showFullText, setShowFullText] = useState(false);
 
-  const shortText = `"EdVantage 360° SolutionsSolutions" is a one-stop partner for educational institutions and organizations seeking comprehensive, end-to-end support.`;
+  const shortText = `"EdVantage 360° Solutions" is a one-stop partner for educational institutions and organizations seeking comprehensive, end-to-end support.`;
 
-  const fullText = `"EdVantage 360° SolutionsSolutions" is a one-stop partner for educational institutions and organizations seeking comprehensive, end-to-end support. 
+  const fullText = `"EdVantage 360° Solutions" is a one-stop partner for educational institutions and organizations seeking comprehensive, end-to-end support. 
   
 We specialize in delivering holistic solutions across every dimension of the education ecosystem—from leadership development to infrastructure, branding, and beyond.
 
