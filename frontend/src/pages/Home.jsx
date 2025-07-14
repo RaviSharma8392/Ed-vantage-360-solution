@@ -1,4 +1,3 @@
-
 // import WhyChooseUs from "../components/ChooseUs";
 import WhyChooseUs from "../components/ChooseUs";
 import UniqueAdvantage from "../components/DevolpmentProposel";
@@ -10,6 +9,8 @@ import Reviews from "../components/Reviews";
 import ServiceComponent from "../components/ServiceCard";
 import ShowText from "../components/ShowText";
 import About from "./About";
+import CompletedWebinar from "./Webinar";
+// import CompletedWebinar from "./Webinar";
 // import PricingPage from "./PricingPage";
 
 const Home = () => {
@@ -17,16 +18,17 @@ const Home = () => {
     <div>
       <Header />
       <ShowText />
-       <About />
+      <CompletedWebinar />
+      <About />
 
       <ServiceComponent />
       {/* <PricingPage/> */}
       {/* <WhyChooseUs /> */}
-      <UniqueAdvantage/>
-     {/* < ModuleCard/> */}
-      
+      <UniqueAdvantage />
+      {/* < ModuleCard/> */}
+
       <Reviews />
     </div>
   );
 };
-export default Home
+export default Home;

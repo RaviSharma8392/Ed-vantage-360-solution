@@ -183,7 +183,7 @@ const UniqueAdvantage = () => {
         <div className="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
           <blockquote className="max-w-3xl mx-auto text-center">
             <p className="text-xl italic mb-6">
-              "EdVantage 360° Solutions didn't just train our teachers - they
+              "EdVantage 360 Solutions didn't just train our teachers - they
               transformed our entire pedagogical approach. Our NEP 2020
               transition was seamless thanks to their customized roadmap."
             </p>

@@ -21,7 +21,7 @@ const TermsOfService = () => {
           Effective Date: {effectiveDate}
         </p>
         <p className="mt-4 text-gray-700 text-lg max-w-2xl mx-auto">
-          These terms govern your access to our 360° educational transformation
+          These terms govern your access to our 360 educational transformation
           services, aligning with our mission to empower institutions through
           NEP 2020-compliant solutions.
         </p>
@@ -77,7 +77,7 @@ const TermsOfService = () => {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-700 mb-2">
-              By engaging with EdVantage 360° Solutions' services, institutions
+              By engaging with EdVantage 360 Solutions' services, institutions
               agree to:
             </p>
             <ol className="list-decimal list-inside text-gray-700 space-y-1">
@@ -93,7 +93,7 @@ const TermsOfService = () => {
               2. Service Scope
             </h2>
             <h3 className="text-lg font-semibold text-blue-700 mb-2">
-              Our 360° Framework Includes:
+              Our 360 Framework Includes:
             </h3>
             <div className="grid sm:grid-cols-2 gap-6">
               <ul className="list-disc list-inside text-gray-700">

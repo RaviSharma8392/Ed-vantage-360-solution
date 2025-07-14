@@ -3,14 +3,14 @@ const reviews = [
     rating: 5,
     title: "A Complete Game-Changer!",
     content:
-      "EdVantage 360° Solutions transformed our entire academic and administrative approach. Their leadership training and academic audits brought clarity, purpose, and results. We’re seeing measurable improvements in both student engagement and faculty performance.",
+      "EdVantage 360 Solutions transformed our entire academic and administrative approach. Their leadership training and academic audits brought clarity, purpose, and results. We’re seeing measurable improvements in both student engagement and faculty performance.",
     author: "— Principal, Harmony International School",
   },
   {
     rating: 5,
     title: "Everything Under One Roof",
     content:
-      "From infrastructure and uniforms to digital classrooms and student workshops, EdVantage 360° Solutions has been our go-to partner. Their 360° support really takes the stress out of managing multiple vendors.",
+      "From infrastructure and uniforms to digital classrooms and student workshops, EdVantage 360 Solutions has been our go-to partner. Their 360 support really takes the stress out of managing multiple vendors.",
     author: "— Administrator, Shanti Vidya Mandir",
   },
   {
@@ -24,7 +24,7 @@ const reviews = [
     rating: 5,
     title: "Professional, Reliable, and Innovative",
     content:
-      "We needed end-to-end support for setting up a vocational training centre. EdVantage 360° Solutions not only provided it but also guided us on branding, promotion, and student placement. Exceptional!",
+      "We needed end-to-end support for setting up a vocational training centre. EdVantage 360 Solutions not only provided it but also guided us on branding, promotion, and student placement. Exceptional!",
     author: "— Project Head, FutureSkool Foundation",
   },
 ];
@@ -41,7 +41,7 @@ const Reviews = () => {
             Trusted by Educational Leaders
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from institutions that transformed with our 360° solutions
+            Hear from institutions that transformed with our 360 solutions
           </p>
         </div>
 

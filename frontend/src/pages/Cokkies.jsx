@@ -18,9 +18,9 @@ const CookiePrivacyPolicy = () => {
           Effective Date: {effectiveDate}
         </p>
         <p className="mt-4 text-gray-700 text-lg max-w-2xl mx-auto">
-          This policy explains how EdVantage 360° SolutionsSolutions uses
-          cookies and protects any information that you share with us during
-          your digital engagement.
+          This policy explains how EdVantage 360 Solutions uses cookies and
+          protects any information that you share with us during your digital
+          engagement.
         </p>
       </div>
 

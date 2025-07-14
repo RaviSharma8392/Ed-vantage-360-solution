@@ -55,12 +55,12 @@ const Footer = () => {
           <div className="flex items-center space-x-3">
             <img
               src="/Logo.png"
-              alt="EdVantage 360° Solutions Logo"
+              alt="EdVantage 360 Solutions Logo"
               className="h-12 w-auto"
               loading="lazy"
             />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-green-600">
-              EdVantage 360° Solutions
+              EdVantage 360 Solutions
             </span>
           </div>
           <p className="text-gray-600 leading-relaxed">
@@ -164,7 +164,11 @@ const Footer = () => {
             {[
               { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
               { icon: <FaTwitter />, href: "#", label: "Twitter" },
-              { icon: <FaInstagram />, href: "https://www.instagram.com/edvantage_360_solutions?utm_source=ig_web_button_share_sheet&igsh=MXZ6Y2h2dWpxMWlpMA==", label: "Instagram" },
+              {
+                icon: <FaInstagram />,
+                href: "https://www.instagram.com/edvantage_360_solutions?utm_source=ig_web_button_share_sheet&igsh=MXZ6Y2h2dWpxMWlpMA==",
+                label: "Instagram",
+              },
               { icon: <FaFacebookF />, href: "#", label: "Facebook" },
               { icon: <FaYoutube />, href: "#", label: "YouTube" },
             ].map((social, index) => (
@@ -197,7 +201,7 @@ const Footer = () => {
       {/* Copyright + Developer Credit */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-gray-500">
         <p>
-          © {new Date().getFullYear()} EdVantage 360° Solutions. All rights
+          © {new Date().getFullYear()} EdVantage 360 Solutions. All rights
           reserved.
         </p>
         <p>
