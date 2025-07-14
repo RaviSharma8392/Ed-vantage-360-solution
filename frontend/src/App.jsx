@@ -52,7 +52,7 @@ const EventPopup = ({ onClose }) => {
         </button>
 
         {/* Action Buttons (overlay bottom) */}
-        <div className="absolute bottom-4 left-0 w-full flex justify-center gap-4 px-4">
+        <div className="absolute bottom-25 left-20 w-full grid justify-center gap-4 px-4">
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSff5GcdE1EKvrjZlPKXvc-aKi0RXb4Q68_LAaaJZm53FO-i6A/viewform"
             target="_blank"
