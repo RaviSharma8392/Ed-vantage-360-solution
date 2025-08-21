@@ -1,34 +1,40 @@
-// import WhyChooseUs from "../components/ChooseUs";
-import WhyChooseUs from "../components/ChooseUs";
-import UniqueAdvantage from "../components/DevolpmentProposel";
-import TeacherTrainingProposal from "../components/DevolpmentProposel";
 import Header from "../components/Header";
-// import ModuleCard from "../components/Module";
-// import ModuleCard from "../components/Module";
-import Reviews from "../components/Reviews";
-import ServiceComponent from "../components/ServiceCard";
 import ShowText from "../components/ShowText";
+
+// Pages / Sections
 import About from "./About";
-import CompletedWebinar from "./Webinar";
 // import CompletedWebinar from "./Webinar";
-// import PricingPage from "./PricingPage";
+
+// Components
+import ServiceComponent from "../components/ServiceCard";
+import UniqueAdvantage from "../components/DevolpmentProposel";
+import Reviews from "../components/Reviews";
 
 const Home = () => {
   return (
     <div>
+      {/* Header Section */}
       <Header />
+
+      {/* Hero / Intro Text */}
       <ShowText />
-      <CompletedWebinar />
+
+      {/* Completed Webinars */}
+      {/* <CompletedWebinar /> */}
+
+      {/* About Section */}
       <About />
 
+      {/* Services Offered */}
       <ServiceComponent />
-      {/* <PricingPage/> */}
-      {/* <WhyChooseUs /> */}
-      <UniqueAdvantage />
-      {/* < ModuleCard/> */}
 
+      {/* Unique Advantage / Proposal */}
+      <UniqueAdvantage />
+
+      {/* Customer / Student Reviews */}
       <Reviews />
     </div>
   );
 };
+
 export default Home;
