@@ -2,11 +2,6 @@ import React from "react";
 
 const aboutSections = [
   {
-    title: "Award as a Movement",
-    desc: `EdVantage Udaan is more than recognition—it’s a nationwide movement celebrating schools that nurture values, life skills, and innovation, preparing students not just for exams, but for life.`,
-    img: "/images/trophy1.png",
-  },
-  {
     title: "Theme of Transformation",
     desc: `Recognising schools as catalysts of transformation—shaping character, inspiring innovation, and building inclusive, future-ready communities.`,
     img: "/images/trophy2.png",
@@ -15,6 +10,11 @@ const aboutSections = [
     title: "Purpose with Heart",
     desc: `Honouring those that blend education with purpose—creating compassionate leaders and responsible citizens.`,
     img: "/images/trophy3.png",
+  },
+  {
+    title: "Award as a Movement",
+    desc: `EdVantage Udaan is more than recognition—it’s a nationwide movement celebrating schools that nurture values, life skills, and innovation, preparing students not just for exams, but for life.`,
+    img: "/images/trophy1.png",
   },
   {
     title: "Organisers & NGO",
@@ -30,10 +30,10 @@ export default function AboutPage() {
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           About <span className="text-yellow-400">EdVantage Udaan 2025</span>
         </h2>
-        <p className="text-lg md:text-xl text-gray-400 italic mb-2">
+        <p className="text-lg md:text-xl font-[italiyan] text-gray-400 italic mb-2">
           शिक्षा और संस्कार पुरस्कार
         </p>
-        <p className="text-xl md:text-2xl font-medium text-yellow-400">
+        <p className="text-xl md:text-2xl font-medium font-[specimen] text-yellow-400">
           “Education with Purpose, Values for Life”
         </p>
       </div>

@@ -11,6 +11,7 @@ const EventNavbar = () => {
     { name: "About", href: "#about" },
     { name: "Awards", href: "#awards" },
     { name: "Contact", href: "#contact" },
+    { name: "School Registration", href: "#register" },
   ];
 
   return (
@@ -45,7 +46,7 @@ const EventNavbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl hover:bg-yellow-400 transition-colors shadow">
-              Nominate Now
+              Register via Google Form
             </a>
           </div>
 
@@ -103,7 +104,7 @@ const EventNavbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors">
-                Nominate Now
+                Register via Google Form
               </a>
             </motion.div>
           )}

@@ -9,18 +9,22 @@ import AboutPage from "../../components/Event/AboutSection";
 import ProcessPage from "./ProcessPage";
 import BenefitsSection from "../../components/Event/Benefit/BenefitsSection";
 import PartnerSchools from "../../components/Event/PartnerSchools/PartnerSchools";
+import RegistrationCard from "../../components/Event/Ragistration/RegistrationCard";
 
 const Events = () => {
   return (
     <div>
       <EventNavbar />
       <HeroBanner />
+      <AwardsList />
+      <ProcessPage />
+
       <AboutPage />
       <PartnerSchools />
       <BenefitsSection />
       <VenueLocations />
-      <ProcessPage />
-      <AwardsList />
+      <RegistrationCard />
+
       <EventFooter />
     </div>
   );

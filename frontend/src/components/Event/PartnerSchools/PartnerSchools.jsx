@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
+// Working images of schools
 const schools = [
   {
     name: "Delhi Public School",
@@ -44,28 +45,26 @@ export default function PartnerSchools() {
   };
 
   return (
-    <section className="bg-gray-50 text-gray-900 py-24 px-6">
+    <section className="bg-white text-gray-900 py-24 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           Our <span className="text-yellow-500">Partner Schools</span>
         </h2>
         <p className="text-gray-600 text-lg mb-16">
           Celebrating collaboration with some of the most prestigious schools
-          shaping the future of education in India.
+          shaping the future of education worldwide.
         </p>
 
-        {/* Carousel */}
         <Slider {...settings}>
           {schools.map((school, index) => (
-            <div key={index} className="px-3">
-              <div className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+            <div key={index} className="px-2">
+              <div className="bg-gradient-to-br from-yellow-50 via-white to-yellow-50 rounded-3xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <img
                   src={school.img}
                   alt={school.name}
-                  className="h-24 w-auto object-contain mb-4 grayscale hover:grayscale-0 transition-all duration-500"
+                  className="h-24 md:h-28 w-auto object-contain mb-4"
                 />
-                <h3 className="text-lg font-semibold text-gray-800 text-center">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800 text-center">
                   {school.name}
                 </h3>
               </div>
