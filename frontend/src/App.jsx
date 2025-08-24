@@ -26,7 +26,8 @@ import Careers from "./components/Careers";
 // Admin
 import AdminDashboard from "./screen/AdminDashbord";
 import User from "./User";
-import Events from "./pages/Event/Event";
+import Events from "./pages/Awards/Event";
+import EventDashboard from "./pages/session/SessionDashboard";
 
 const App = () => {
   return (
@@ -45,6 +46,8 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="/event" element={<EventDashboard />} />
+
         <Route path="team" element={<Team />} />
         <Route path="services" element={<ServiceComponent />} />
         <Route path="contact" element={<Contact />} />
