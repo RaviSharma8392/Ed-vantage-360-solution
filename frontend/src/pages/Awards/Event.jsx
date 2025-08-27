@@ -20,7 +20,7 @@ const Events = () => {
       <ProcessPage />
 
       <AboutPage />
-      <PartnerSchools />
+      {/* <PartnerSchools /> */}
       <BenefitsSection />
       <SubmissionProcess />
       <RegistrationCard />

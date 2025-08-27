@@ -2,43 +2,33 @@ import React from "react";
 
 export default function HeroBanner() {
   return (
-    <section
-      onClick={() =>
-        (window.location.href =
-          "https://docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform")
-      }
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <img
         src="/image.png"
         alt="EdVantage Udaan Banner"
-        className="absolute  hidden md:flex inset-0 w-full h-full object-cover object-center"
-      />
-      <img
-        src="/image.png"
-        alt="EdVantage Udaan Banner"
-        className="absolute md:hidden  w-full h-full "
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
       {/* Overlay */}
-      <div className=" hidden md:flex absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 md:px-8  hidden md:grid ">
+      <div className="relative z-10 text-center text-white px-4 md:px-8">
         {/* Main Title */}
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-xl font-sans">
           EdVantage Global School Summit & Awards 2025
         </h1>
 
         {/* Tagline */}
-        <p className="  hidden md:grid text-lg sm:text-xl md:text-2xl lg:text-3xl italic font-light text-gray-200 mb-8 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl italic font-light text-gray-200 mb-8 max-w-3xl mx-auto">
           <span className="text-yellow-400 font-semibold">
             “Celebrating Excellence Beyond Borders”
           </span>
         </p>
 
         {/* Multilingual */}
-        <div className="  hidden md:grid  space-y-1 text-sm sm:text-base md:text-lg text-gray-300 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+        <div className="space-y-1 text-sm sm:text-base md:text-lg text-gray-300 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
           <p>“शिक्षा और संस्कार पुरस्कार”</p>
           <p>“Education & Values Awards”</p>
           <p>“Prix de l'Éducation et des Valeurs”</p>

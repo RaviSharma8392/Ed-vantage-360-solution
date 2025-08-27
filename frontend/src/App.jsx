@@ -33,7 +33,7 @@ const App = () => {
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/school-awards" element={<Events />} />
+      <Route path="/GSSA" element={<Events />} />
 
       <Route path="/login" element={<Login />} />
       <Route path="/blog" element={<Blog />} />

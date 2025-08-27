@@ -4,28 +4,28 @@ export default function ProcessPage() {
   const timeline = [
     {
       title: "Registration with Fee Payment",
-      date: "15th September 2025",
+      date: "25th September 2025",
       desc: "Schools must register through the Google Form and submit the registration fee of ₹11,000 per school.",
     },
     {
       title: "Project Submission Deadline",
-      date: "25th September 2025",
+      date: "30th September 2025",
       desc: "Submit documentation and evidence of initiatives carried out in the last two years to edvantage360.info@gmail.com.",
     },
     {
       title: "Jury Review",
-      date: "1st – 10th October 2025",
+      date: "1st – 15th October 2025",
       desc: "A panel of educators, life skill coaches, counsellors, and NGO leaders will evaluate the submissions.",
     },
     {
       title: "Finalists Announcement",
-      date: "11th – 15th October 2025",
+      date: "15th October 2025",
       desc: "Shortlisted schools will be announced and invited for the award ceremony.",
     },
     {
-      title: "National Award Ceremony",
+      title: "Award Ceremony",
       date: "26th October 2025",
-      desc: "Award function held across Delhi, Varanasi, Faridabad, Noida, Bhopal, Kolkata, and Aligarh.",
+      // desc: "Award function held across Delhi, Varanasi, Faridabad, Noida, Bhopal, Kolkata, and Aligarh.",
     },
   ];
 

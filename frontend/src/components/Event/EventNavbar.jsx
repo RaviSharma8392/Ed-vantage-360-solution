@@ -101,7 +101,7 @@ const EventNavbar = () => {
               ))}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform"
-                target="_blank"
+                https:target="_blank" //docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform
                 rel="noopener noreferrer"
                 className="block text-center bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors">
                 Register via Google Form

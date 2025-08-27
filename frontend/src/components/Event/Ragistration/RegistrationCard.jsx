@@ -44,13 +44,13 @@ const RegistrationCard = () => {
                 <span className="font-medium text-yellow-300">
                   Registration Deadline:
                 </span>{" "}
-                15th September 2025
+                25th September 2025
               </p>
               <p className="text-gray-300">
                 <span className="font-medium text-yellow-300">
                   Submission Deadline:
                 </span>{" "}
-                25th September 2025
+                30th September 2025
               </p>
             </div>
 
@@ -62,9 +62,13 @@ const RegistrationCard = () => {
                 <span className="font-medium text-yellow-300">Date:</span> 26th
                 October 2025
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-300 grid">
                 <span className="font-medium text-yellow-300">Venues:</span> New
                 Delhi, Abu Dhabi
+                <span className="text-yellow-300">
+                  Charges Applicable (The charges for Abu Dhabi will be
+                  mentioned after receiving the form)
+                </span>
               </p>
             </div>
           </div>
@@ -173,7 +177,8 @@ const RegistrationCard = () => {
             <p className="text-sm text-gray-300">
               • Abu Dhabi —{" "}
               <span className="text-yellow-300">
-                Charges Applicable (₹1.5 Lacs per school with 1 representative)
+                Charges Applicable (The charges for Abu Dhabi will be mentioned
+                after receiving the form)
               </span>
             </p>
           </div>

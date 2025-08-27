@@ -23,7 +23,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
     { path: "/about", label: "About" },
-    { path: "/school-awards", label: "Awards" },
+    { path: "/GSSA", label: "Awards" },
     { path: "/event", label: "Our Event" },
 
     { path: "/team", label: "Our Team" },
