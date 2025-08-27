@@ -1,68 +1,113 @@
 import React from "react";
-import {
-  FaLandmark, // Delhi (India Gate)
-  FaGopuram, // Varanasi (temple style)
-  FaTree, // Faridabad
-  FaBuilding, // Noida
-  FaWater, // Bhopal
-  FaMonument, // Kolkata
-  FaUniversity, // Aligarh
-} from "react-icons/fa";
+import { Mail, FileText, Award, CheckCircle, Users } from "lucide-react";
 
-export default function VenueLocations() {
-  const venues = [
-    {
-      name: "Delhi",
-      icon: <FaLandmark className="w-10 h-10 text-yellow-400" />,
-    },
-    {
-      name: "Varanasi",
-      icon: <FaGopuram className="w-10 h-10 text-yellow-400" />,
-    },
-    {
-      name: "Faridabad",
-      icon: <FaTree className="w-10 h-10 text-yellow-400" />,
-    },
-    {
-      name: "Noida",
-      icon: <FaBuilding className="w-10 h-10 text-yellow-400" />,
-    },
-    { name: "Bhopal", icon: <FaWater className="w-10 h-10 text-yellow-400" /> },
-    {
-      name: "Kolkata",
-      icon: <FaMonument className="w-10 h-10 text-yellow-400" />,
-    },
-    {
-      name: "Aligarh",
-      icon: <FaUniversity className="w-10 h-10 text-yellow-400" />,
-    },
-  ];
-
+export default function SubmissionProcess() {
   return (
-    <section className="bg-black text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">
-          Venue <span className="text-yellow-400">Locations</span>
-        </h2>
-        <p className="text-gray-300 mb-12">
-          Our award ceremonies are hosted in these prestigious cities across
-          India.
-        </p>
+    <section className="bg-gray-950 text-gray-100 py-20 px-6">
+      <div className="max-w-6xl mx-auto space-y-16">
+        {/* Submission Process */}
+        <div>
+          <h2 className="text-4xl font-bold text-yellow-400 mb-6 text-center md:text-left">
+            Submission Process
+          </h2>
+          <p className="text-lg text-gray-300 mb-6">
+            Schools aspiring to participate in the{" "}
+            <span className="font-semibold text-yellow-300">
+              EdVantage Global School Summit & Awards 2025 (GSSA)
+            </span>{" "}
+            are requested to submit their documentation and evidence of
+            initiatives carried out in the last two years.
+          </p>
 
-        {/* Venue Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
-          {venues.map((venue, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-900 rounded-xl p-6 flex flex-col items-center 
-              hover:bg-yellow-500/20 border border-gray-700 hover:border-yellow-400 transition-all">
-              {venue.icon}
-              <h3 className="mt-3 text-lg font-semibold text-white">
-                {venue.name}
+          {/* Email */}
+          <div className="flex items-center gap-3 mb-8 bg-gray-900 p-4 rounded-lg border border-yellow-600 shadow-md">
+            <Mail className="w-6 h-6 text-yellow-400" />
+            <p>
+              📧 Email your entries to:{" "}
+              <span className="font-semibold text-yellow-300">
+                edvantage360.info@gmail.com
+              </span>
+            </p>
+          </div>
+
+          {/* Must Include List */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold flex items-center gap-2 text-yellow-300">
+              <FileText className="w-6 h-6" /> Must Include:
+            </h3>
+            <ul className="list-disc list-inside space-y-3 text-gray-300 text-base leading-relaxed">
+              <li>
+                <span className="font-semibold">Statement of Purpose</span> –
+                Why the category was chosen (max 500 words).
+              </li>
+              <li>
+                <span className="font-semibold">Evidence of Achievement</span> –
+                Photos, certificates, videos, testimonials, project reports,
+                internships with NGOs for the award chosen.
+              </li>
+              <li>
+                <span className="font-semibold">Leadership Profile</span> – 200
+                words write-up about the school leadership (Chairman/ Director/
+                Principal).
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Jury & Selection */}
+        <div>
+          <h2 className="text-4xl font-bold text-yellow-400 mb-6 text-center md:text-left">
+            Jury & Selection Process
+          </h2>
+
+          <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 shadow-lg">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="w-7 h-7 text-yellow-400" />
+              <h3 className="text-2xl font-semibold text-yellow-300">
+                A Panel of Experts
               </h3>
             </div>
-          ))}
+            <p className="text-gray-300 mb-6">
+              A panel of distinguished experts worldwide will evaluate all
+              entries based on the following criteria:
+            </p>
+
+            {/* Evaluation Criteria */}
+            <ul className="grid sm:grid-cols-2 gap-4">
+              <li className="flex items-start gap-3 bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1" />
+                <p>
+                  <span className="font-semibold">Relevance to category</span> –
+                  20%
+                </p>
+              </li>
+              <li className="flex items-start gap-3 bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1" />
+                <p>
+                  <span className="font-semibold">
+                    Quality & impact of work
+                  </span>{" "}
+                  – 40%
+                </p>
+              </li>
+              <li className="flex items-start gap-3 bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1" />
+                <p>
+                  <span className="font-semibold">Innovation & creativity</span>{" "}
+                  – 20%
+                </p>
+              </li>
+              <li className="flex items-start gap-3 bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1" />
+                <p>
+                  <span className="font-semibold">
+                    Presentation & portfolio clarity
+                  </span>{" "}
+                  – 20%
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

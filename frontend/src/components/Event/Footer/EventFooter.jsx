@@ -15,17 +15,17 @@ const EventFooter = () => {
         {/* Column 1: Logo + About */}
         <div className="flex flex-col gap-4">
           <img
-            src="https://edvantage360solution.netlify.app"
+            src="https://edvantage360solution.netlify.app/Logo.png"
             alt="EdVantage Udaan Logo"
             className="h-10 w-10 bg-white rounded-lg p-2 shadow"
             loading="lazy"
           />
           <h3 className="text-2xl font-bold text-white mt-2">
-            EdVantage Udaan 2025
+            EdVantage 360 Solutions{" "}
           </h3>
           <p className="text-sm leading-relaxed text-gray-400">
-            <span className="font-semibold text-white">EdVantage Udaan</span> is
-            a national education awards initiative that recognises schools as
+            <span className="font-semibold text-white">EdVantage </span> is a
+            global education awards initiative that recognises schools as
             catalysts of transformation. We celebrate institutions that nurture
             innovation, life skills, and values—preparing students not just for
             exams, but for life.
@@ -135,8 +135,8 @@ const EventFooter = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500 leading-relaxed">
         <p>
-          © {new Date().getFullYear()} EdVantage Udaan — A National Education
-          Awards. All Rights Reserved.
+          © {new Date().getFullYear()} EdVantage 360 Solutions All Rights
+          Reserved.
         </p>
         <p className="mt-2 text-gray-400">
           Designed, Managed & Developed with ❤️ by{" "}

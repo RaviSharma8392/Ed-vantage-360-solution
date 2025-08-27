@@ -8,7 +8,10 @@ const aboutSections = [
   },
   {
     title: "Purpose with Heart",
-    desc: `Honouring those that blend education with purpose—creating compassionate leaders and responsible citizens.`,
+    desc: `EdVantage Global School Summit & Awards 2025 honour schools across the globe that go beyond academics to nurture the holistic growth of students. The awards celebrate institutions that integrate life skills, values, and innovation into education, preparing students not just for exams, but for life.
+They recognise schools as change-makers and mentors of change, inspiring students to lead with empathy, integrity, resilience, and responsibility towards society. Through this initiative, GSSA seeks to build a global movement and purpose-driven, value-based education, where marks may fade but values last for life.
+✨ This positioning ensures the awards stand not just as a recognition program, but as a movement towards value-based, future-ready education across the globe.
+`,
     img: "/images/trophy3.png",
   },
   {
@@ -28,7 +31,11 @@ export default function AboutPage() {
     <section id="about" className="py-20 px-6 bg-black text-gray-200">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-          About <span className="text-yellow-400">EdVantage Udaan 2025</span>
+          About{" "}
+          <span className="text-yellow-400">
+            {" "}
+            EdVantage Global School Summit{" "}
+          </span>
         </h2>
         <p className="text-lg md:text-xl font-[italiyan] text-gray-400 italic mb-2">
           शिक्षा और संस्कार पुरस्कार
@@ -48,6 +55,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-semibold mb-3 text-yellow-400">
                   {sec.title}
                 </h3>
+
                 <p className="text-gray-300 leading-relaxed">{sec.desc}</p>
               </div>
             </div>

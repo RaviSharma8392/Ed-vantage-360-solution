@@ -33,8 +33,8 @@ export default function EventAward() {
     <section id="awards" className="bg-black text-gray-100 py-20 px-6">
       {/* Header */}
       <div className="text-center mb-14">
-        <h1 className="text-5xl font-extrabold mb-4 text-yellow-400">
-          EdVantage School Awards 2025
+        <h1 className="text-2xl font-extrabold mb-4 text-yellow-400">
+          EdVantage Global School Summit & Awards 2025{" "}
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
           Honoring schools that inspire transformation, nurture innovation, and
