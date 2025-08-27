@@ -16,7 +16,7 @@ They recognise schools as change-makers and mentors of change, inspiring student
   },
   {
     title: "Award as a Movement",
-    desc: `EdVantage Udaan is more than recognition—it’s a nationwide movement celebrating schools that nurture values, life skills, and innovation, preparing students not just for exams, but for life.`,
+    desc: `EdVantage Global School Summit & Awards 2025 is more than recognition—it’s a nationwide movement celebrating schools that nurture values, life skills, and innovation, preparing students not just for exams, but for life.`,
     img: "/images/trophy1.png",
   },
   {
