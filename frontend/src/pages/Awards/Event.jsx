@@ -7,7 +7,6 @@ import EventNavbar from "../../components/Event/EventNavbar";
 import AboutPage from "../../components/Event/AboutSection";
 import ProcessPage from "./ProcessPage";
 import BenefitsSection from "../../components/Event/Benefit/BenefitsSection";
-import PartnerSchools from "../../components/Event/PartnerSchools/PartnerSchools";
 import RegistrationCard from "../../components/Event/Ragistration/RegistrationCard";
 import SubmissionProcess from "../../components/Event/VenueLocations/VenueLocations";
 
@@ -20,7 +19,6 @@ const Events = () => {
       <ProcessPage />
 
       <AboutPage />
-      {/* <PartnerSchools /> */}
       <BenefitsSection />
       <SubmissionProcess />
       <RegistrationCard />

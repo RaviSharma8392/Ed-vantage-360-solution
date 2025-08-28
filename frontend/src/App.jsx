@@ -28,38 +28,43 @@ import AdminDashboard from "./screen/AdminDashbord";
 import User from "./User";
 import Events from "./pages/Awards/Event";
 import EventDashboard from "./pages/session/SessionDashboard";
+import PopupRedirect from "./Popup/Popup";
 
 const App = () => {
   return (
-    <Routes>
-      {/* Public Routes */}
-      <Route path="/GSSA" element={<Events />} />
+    <div>
+      <PopupRedirect />
 
-      <Route path="/login" element={<Login />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/careers" element={<Careers />} />
-      <Route path="/privacy" element={<PrivacyPolicy />} />
-      <Route path="/cookies" element={<CookiePrivacyPolicy />} />
-      <Route path="/terms" element={<TermsOfService />} />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/GSSA" element={<Events />} />
 
-      {/* User Layout */}
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="/event" element={<EventDashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/cookies" element={<CookiePrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
 
-        <Route path="team" element={<Team />} />
-        <Route path="services" element={<ServiceComponent />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="pricing" element={<PricingPage />} />
-      </Route>
+        {/* User Layout */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="/event" element={<EventDashboard />} />
 
-      {/* Admin Layout */}
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<AdminDashboard />} />
-        <Route path="users" element={<User />} />
-      </Route>
-    </Routes>
+          <Route path="team" element={<Team />} />
+          <Route path="services" element={<ServiceComponent />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="pricing" element={<PricingPage />} />
+        </Route>
+
+        {/* Admin Layout */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="users" element={<User />} />
+        </Route>
+      </Routes>
+    </div>
   );
 };
 
