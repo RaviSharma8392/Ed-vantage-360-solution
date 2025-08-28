@@ -21,7 +21,10 @@ export default function PopupRedirect() {
 
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-          EdVantage Global Summit 2025
+          EdVantage Global School Summit & Awards 2025
+          <span className="block text-lg font-semibold text-green-700 mt-1">
+            (GSSA 2025)
+          </span>
         </h2>
 
         {/* Subtext */}
@@ -36,10 +39,26 @@ export default function PopupRedirect() {
 
         {/* CTA Button */}
         <a
-          href="https://edvantage360solution.netlify.app/GSSA" // replace with real link
+          href="https://edvantage360solution.netlify.app/GSSA"
+          target="_blank"
+          onClick={() => setOpen(false)}
           className="inline-block rounded-xl bg-green-700 px-8 py-3 text-lg font-medium text-white shadow-lg hover:bg-green-800 hover:shadow-xl transition">
           Learn More
         </a>
+
+        {/* <a
+          onClick={(e) => {
+            e.preventDefault();
+            setOpen(false);
+
+            window.open(
+              "https://edvantage360solution.netlify.app/GSSA",
+              "_blank"
+            );
+          }}
+          className="inline-block rounded-xl bg-green-700 px-8 py-3 text-lg font-medium text-white shadow-lg hover:bg-green-800 hover:shadow-xl transition">
+          Learn More
+        </a> */}
       </div>
     </div>
   );

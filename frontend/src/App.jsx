@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -31,9 +31,12 @@ import EventDashboard from "./pages/session/SessionDashboard";
 import PopupRedirect from "./Popup/Popup";
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <div>
-      <PopupRedirect />
+      {/* Show Popup only on home page */}
+      {location.pathname === "/" && <PopupRedirect />}
 
       <Routes>
         {/* Public Routes */}
@@ -50,7 +53,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="/event" element={<EventDashboard />} />
+          <Route path="event" element={<EventDashboard />} />
 
           <Route path="team" element={<Team />} />
           <Route path="services" element={<ServiceComponent />} />
