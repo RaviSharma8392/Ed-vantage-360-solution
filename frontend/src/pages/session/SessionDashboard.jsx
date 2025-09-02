@@ -1,104 +1,103 @@
+// src/pages/User/EventDashboard.jsx
 import React, { useState, useEffect } from "react";
 
-// Import components
-import FilterBar from "../../components/Sessions/FilterBar";
+// Components
 import TimeTabs from "../../components/Sessions/TimeTabs";
-import EventCard from "../../components/Sessions/EventCard";
+import EventCard from "../../components/common/EventCard";
 
-// Import data
-import eventsData from "../../data/sessionData/events.json";
+// API service
+import { getEvents } from "../../service/eventService";
 
 const EventDashboard = () => {
   const [activeTab, setActiveTab] = useState("upcoming");
+  const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [categoryFilter, setCategoryFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Filter events based on active tab and filters
+  // Fetch events
   useEffect(() => {
-    let events = [...eventsData];
+    const fetchEvents = async () => {
+      try {
+        setLoading(true);
+        const data = await getEvents();
+        setEvents(data);
+      } catch (err) {
+        setError("Failed to load events. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEvents();
+  }, []);
 
-    // Filter by time category
+  // Apply filters
+  useEffect(() => {
+    let filtered = [...events];
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const weekEnd = new Date(today);
-    weekEnd.setDate(weekEnd.getDate() + 7);
 
     if (activeTab === "today") {
-      events = events.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate.toDateString() === today.toDateString();
-      });
-    } else if (activeTab === "thisWeek") {
-      events = events.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today && eventDate <= weekEnd;
-      });
+      filtered = filtered.filter(
+        (event) => new Date(event.date).toDateString() === today.toDateString()
+      );
     } else if (activeTab === "upcoming") {
-      events = events.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today;
-      });
+      filtered = filtered.filter((event) => new Date(event.date) >= today);
     } else if (activeTab === "past") {
-      events = events.filter((event) => {
-        const eventDate = new Date(event.date);
-        return eventDate < today;
-      });
+      filtered = filtered.filter((event) => new Date(event.date) < today);
     }
 
-    // Filter by category
-    if (categoryFilter !== "all") {
-      events = events.filter((event) => event.type === categoryFilter);
-    }
-
-    // Filter by search query
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      events = events.filter(
+      filtered = filtered.filter(
         (event) =>
           event.title.toLowerCase().includes(query) ||
           event.description.toLowerCase().includes(query)
       );
     }
 
-    setFilteredEvents(events);
-  }, [activeTab, categoryFilter, searchQuery]);
-
-  // Get unique categories for filter
-  const categories = ["all", ...new Set(eventsData.map((event) => event.type))];
-  console.log(filteredEvents);
+    setFilteredEvents(filtered);
+  }, [events, activeTab, searchQuery]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-800">Event Dashboard</h1>
-          <p className="text-gray-600 mt-2">
-            Discover and join our upcoming events and sessions
+        <div className="container mx-auto px-4 py-6 sm:px-6 sm:py-8 text-center sm:text-left">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Event Dashboard
+          </h1>
+          <p className="text-gray-600 mt-2 sm:mt-3 text-sm sm:text-base">
+            Explore and join our events
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        {/* Filter Section */}
-        <FilterBar
-          categories={categories}
-          categoryFilter={categoryFilter}
-          setCategoryFilter={setCategoryFilter}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+      {/* Search & Tabs */}
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search events..."
+            className="w-full sm:w-64 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
+          />
+          <TimeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        </div>
 
-        {/* Time Tabs */}
-        <TimeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
-        {/* Events Grid */}
-        {filteredEvents.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        {/* Content */}
+        {loading ? (
+          <div className="text-center text-gray-600 py-12">
+            Loading events...
+          </div>
+        ) : error ? (
+          <div className="text-center text-red-600 py-12">{error}</div>
+        ) : filteredEvents.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard key={event._id} event={event} />
             ))}
           </div>
         ) : (
@@ -122,7 +121,7 @@ const EventDashboard = () => {
               No events found
             </h3>
             <p className="text-gray-600">
-              Try adjusting your filters or search query to find events
+              Try adjusting your search or switch tabs to see events
             </p>
           </div>
         )}

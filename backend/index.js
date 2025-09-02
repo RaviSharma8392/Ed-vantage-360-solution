@@ -1,44 +1,48 @@
-const  express = require('express')
-const databseConnect=require('./config/database')
+const express = require('express');
+const databseConnect = require('./config/database');
 const adminRouter = require('./routes/adminRoute');
 const cookieParser = require('cookie-parser');
 const authRouter = require('./routes/authRouter');
 const cors = require('cors');
 const contactRouter = require('./routes/contactRoute');
+const eventRouter = require('./routes/evntRoute');
+const uploadRouter = require("./routes/upload");
 
 
-// import dotenv file
 require('dotenv').config();
 
-const app = express()
-const port = process.env.PORT
+const app = express();
+const port = process.env.PORT || 5000;
+
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 app.use(cors({
-  origin: "http://localhost:5173", 
-  credentials: true
+  origin: FRONTEND_URL,
+  credentials: true,
 }));
 
-// middelware
+// Middleware
 app.use(express.json());
-app.use(cookieParser()); // Enable cookie parser
+app.use(cookieParser());
+
+// Routes
+app.use("/api", contactRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api", authRouter);
+app.use("/api/event", eventRouter);
+app.use("/api/upload", uploadRouter);
 
 
-// routes
-app.use("/api",contactRouter)
-app.use("/api/admin",adminRouter) 
-app.use("/api",authRouter)
+// Connect DB + start server
+const serverStart = async () => {
+  try {
+    await databseConnect();
+    app.listen(port, () => 
+      console.log(`🚀 Server running on http://localhost:${port}`)
+    );
+  } catch (error) {
+    console.log("❌ Error connecting server:", error);
+  }
+};
 
-
-
-// connecting server and database
-
-const serverStart=async()=>
-    {try { await databseConnect()
-        app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-        
-    } catch (error) {
-        console.log("error find in conecting server"+error)
-        
-    }}
-
- serverStart()
+serverStart();

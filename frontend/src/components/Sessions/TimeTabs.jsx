@@ -5,7 +5,7 @@ const TimeTabs = ({ activeTab, setActiveTab }) => {
   const tabs = [
     { id: "upcoming", label: "Upcoming" },
     { id: "today", label: "Today" },
-    { id: "thisWeek", label: "This Week" },
+
     { id: "past", label: "Past Events" },
   ];
 

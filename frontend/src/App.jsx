@@ -29,6 +29,7 @@ import User from "./User";
 import Events from "./pages/Awards/Event";
 import EventDashboard from "./pages/session/SessionDashboard";
 import PopupRedirect from "./Popup/Popup";
+import AdminEvents from "./screen/AdminEvent";
 
 const App = () => {
   const location = useLocation();
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/cookies" element={<CookiePrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/adminevent" element={<AdminEvents />} />
 
         {/* User Layout */}
         <Route path="/" element={<Layout />}>

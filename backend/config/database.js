@@ -1,10 +1,9 @@
 const mongoose=require('mongoose')
 require('dotenv').config();
-const URI=process.env.URI
+const URI=process.env.MONGO_URI
 
 
 const databseConnect=async()=>{
-
     try {
         await mongoose.connect(URI)
         console.log("databae connect succesfully")
