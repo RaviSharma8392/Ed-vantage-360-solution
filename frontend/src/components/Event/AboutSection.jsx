@@ -5,15 +5,28 @@ export default function AboutSection({
   mainTitle,
   subTitle,
   tagline,
+  newTagLine,
 }) {
   return (
     <section id="about" className="py-20 px-6 bg-black text-gray-200">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 flex flex-col">
-          <span>{mainTitle}</span>
-          <span className="text-yellow-400">{tagline}</span>
+        {/* Main Title */}
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+          {mainTitle}
         </h2>
 
+        {/* Tagline (separate line, highlighted) */}
+        {tagline && (
+          <p className="text-xl md:text-2xl font-semibold text-yellow-400 mb-4">
+            {tagline}
+          </p>
+        )}
+
+        <h3 className="text-lg font-semibold mb-3 text-yellow-400">
+          {newTagLine}
+        </h3>
+
+        {/* Subtitle (italic gray text) */}
         {subTitle && (
           <p className="text-lg md:text-xl font-[italiyan] text-gray-400 italic mb-2">
             {subTitle}
@@ -21,6 +34,7 @@ export default function AboutSection({
         )}
       </div>
 
+      {/* Sections Grid */}
       <div className="grid md:grid-cols-2 gap-8">
         {sections.map((sec, idx) => (
           <div

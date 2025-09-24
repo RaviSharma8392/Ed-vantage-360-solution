@@ -47,7 +47,10 @@ const KolkataEvent = () => {
       eventTitle: "EdVantage Education Laureates Awards 2025",
       edition: "3rd Edition – Kolkata – 22nd November 2025",
       dateAndVenue:
-        "National Conclave on Life Skill, Value Education & Child Safeguarding “Not Just Another Conclave – Education Reimagined” (In Collaboration with Orange House)",
+        "National Conclave on Life Skill, Value Education & Child Safeguarding ",
+      newTagLine:
+        "Not Just Another Conclave – Education Reimagined” (In Collaboration with Orange House)",
+
       sections: [
         {
           title: "Theme of Transformation",
@@ -79,7 +82,7 @@ const KolkataEvent = () => {
       description: `Welcome to the official registration for the EdVantage Education Laureates Awards 2025 – 3rd Edition in Kolkata.
 Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Character, Inspiring Innovation, and Building Inclusive, Future-Ready Communities.”
 
-📌 Last Date of Registration: 7th November 2025
+📌 Last Date of Registration: 15th November 2025
 📌 For queries: edvantage360.info@gmail.com | +91 8700356606`,
       src: "https://docs.google.com/forms/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/viewform",
       height: 1500,
@@ -149,6 +152,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         subTitle={eventData.about.edition}
         tagline={eventData.about.dateAndVenue}
         sections={eventData.about.sections}
+        newTagLine={eventData.about.newTagLine}
       />
       <div className="flex bg-black justify-center md:justify-start">
         <img
@@ -157,6 +161,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
           className="w-72 md:w-[400px] drop-shadow-2xl"
         />
       </div>
+
       <section className="w-full flex flex-col items-center bg-black text-gray-200 p-6">
         <h2 className="text-3xl font-bold mb-4 text-center text-yellow-400">
           {eventData.registrationForm.title}
@@ -164,17 +169,16 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         <p className="text-gray-300 mb-6 text-center whitespace-pre-line">
           {eventData.registrationForm.description}
         </p>
-        <iframe
-          src={eventData.registrationForm.src}
-          width="100%"
-          height={eventData.registrationForm.height}
-          frameBorder="0"
-          marginHeight="0"
-          marginWidth="0"
-          className="rounded-xl shadow-lg"
-          title="EdVantage Registration Form"
-        />
+
+        <a
+          href={eventData.registrationForm.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-lg hover:bg-yellow-500 transition">
+          Register Now
+        </a>
       </section>
+
       <EventFooter footerData={footerData} />
     </div>
   );
