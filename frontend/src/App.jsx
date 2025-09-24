@@ -30,6 +30,7 @@ import Events from "./pages/Awards/Event";
 import EventDashboard from "./pages/session/SessionDashboard";
 import PopupRedirect from "./Popup/Popup";
 import AdminEvents from "./screen/AdminEvent";
+import KolkataEvent from "./pages/Awards/KolkataEvent";
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
       <Routes>
         {/* Public Routes */}
         <Route path="/GSSA" element={<Events />} />
+        <Route path="/ela-kolkata-edition" element={<KolkataEvent />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blog />} />

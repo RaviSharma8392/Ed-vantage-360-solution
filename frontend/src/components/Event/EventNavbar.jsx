@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const EventNavbar = () => {
+const EventNavbar = ({ logoSrc, links = [], cta }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  const links = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Awards", href: "#awards" },
-    { name: "Contact", href: "#contact" },
-    { name: "School Registration", href: "#register" },
-  ];
 
   return (
     <nav className="bg-black backdrop-blur-md font-[poppins] text-white shadow-lg sticky top-0 z-50 py-5">
@@ -21,7 +13,7 @@ const EventNavbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="/LOGO[1].png"
+              src={logoSrc}
               alt="Logo"
               className="h-10 w-auto rounded-full shadow hover:scale-105 transition-transform"
             />
@@ -40,15 +32,17 @@ const EventNavbar = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="hidden md:flex">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl hover:bg-yellow-400 transition-colors shadow">
-              Register via Google Form
-            </a>
-          </div>
+          {cta && (
+            <div className="hidden md:flex">
+              <a
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl hover:bg-yellow-400 transition-colors shadow">
+                {cta.label}
+              </a>
+            </div>
+          )}
 
           {/* Mobile Toggle */}
           <div className="md:hidden flex items-center">
@@ -99,13 +93,15 @@ const EventNavbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform"
-                https:target="_blank" //docs.google.com/forms/d/e/1FAIpQLSeO3ylhKM3z9qd9EUJGzo4QxTHcfsSY7y2m3AqVRCfUH28wbA/viewform
-                rel="noopener noreferrer"
-                className="block text-center bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors">
-                Register via Google Form
-              </a>
+              {cta && (
+                <a
+                  href={cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors">
+                  {cta.label}
+                </a>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
