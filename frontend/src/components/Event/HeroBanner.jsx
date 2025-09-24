@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function HeroBanner({
+  foundation,
   backgroundImage,
   title,
   tagline,
@@ -22,6 +23,9 @@ export default function HeroBanner({
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 md:px-8">
         {/* Main Title */}
+
+        {/*  Title */}
+
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-xl font-sans">
           {title}
         </h1>
@@ -31,6 +35,11 @@ export default function HeroBanner({
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl italic font-light text-gray-200 mb-8 max-w-3xl mx-auto">
             <span className="text-yellow-400 font-semibold">{tagline}</span>
           </p>
+        )}
+        {foundation && (
+          <h1 className="space-y-1 text-sm sm:text-base md:text-lg text-gray-300 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+            {foundation}
+          </h1>
         )}
 
         {/* Multilingual */}

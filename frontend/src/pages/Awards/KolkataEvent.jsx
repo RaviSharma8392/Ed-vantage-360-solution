@@ -3,11 +3,6 @@ import AboutSection from "../../components/Event/AboutSection";
 import EventNavbar from "../../components/Event/EventNavbar";
 import HeroBanner from "../../components/Event/HeroBanner";
 import EventFooter from "../../components/Event/Footer/EventFooter";
-import AwardsList from "../../components/Event/AwardsList";
-import ProcessPage from "./ProcessPage";
-import BenefitsSection from "../../components/Event/Benefit/BenefitsSection";
-import RegistrationCard from "../../components/Event/Ragistration/RegistrationCard";
-import SubmissionProcess from "../../components/Event/VenueLocations/VenueLocations";
 
 const KolkataEvent = () => {
   const eventData = {
@@ -21,12 +16,14 @@ const KolkataEvent = () => {
     ],
     ctaButton: {
       label: "Register via Google Form",
-      href: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/formResponse",
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/viewform",
     },
     banner: {
       backgroundImage: "/8e5417a5-bcec-4981-b8f9-b74ad3710d97.jpeg",
       title: "EdVantage Education Laureates Awards 2025",
-      tagline: "3rd Edition – Kolkata | 15th November 2025 | Tollygunj Club",
+      tagline: "3rd Edition – Kolkata | 22nd November 2025 | Tollygunj Club",
+      foundation: "In Collaboration with Orange House",
+
       multilingualTexts: [
         "“शिक्षा और संस्कार पुरस्कार”",
         "“Education & Values Awards”",
@@ -40,7 +37,7 @@ const KolkataEvent = () => {
         { label: "Learn More", href: "#about", primary: false },
         {
           label: "Register Now",
-          href: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/formResponse",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/viewform",
           primary: true,
           target: "_blank",
         },
@@ -48,25 +45,31 @@ const KolkataEvent = () => {
     },
     about: {
       eventTitle: "EdVantage Education Laureates Awards 2025",
-      edition: "3rd Edition – Kolkata – 15th November 2025",
+      edition: "3rd Edition – Kolkata – 22nd November 2025",
       dateAndVenue:
         "National Conclave on Life Skill, Value Education & Child Safeguarding “Not Just Another Conclave – Education Reimagined” (In Collaboration with Orange House)",
       sections: [
         {
           title: "Theme of Transformation",
-          desc: "Recognising Leaders as catalysts of transformation—shaping character, inspiring innovation, and building inclusive, future-ready communities.",
+          desc: "Recognising schools as catalysts of transformation—shaping character, inspiring innovation, and building inclusive, future-ready communities.",
         },
         {
-          title: "Purpose & Objective",
-          desc: "EdVantage Education Laureates Awards honour leaders across the globe that go beyond academics to nurture the holistic growth of students. The awards celebrate educators that integrate life skills, values, and innovation into education, preparing students not just for exams, but for life. They recognise EdVantage Laureates as change-makers and mentors of change, inspiring students to lead with empathy, integrity, resilience, and responsibility towards society. Through this initiative, ELA seeks to build a global movement and purpose-driven, value-based education, where marks may fade but values last for life. ✨ This positioning ensures the awards stand not just as a recognition program, but as a movement towards value-based, future-ready education across the globe.",
+          title: "Purpose with Heart",
+          desc: `EdVantage Global School Summit & Awards 2025 honour schools across the globe that go beyond academics to nurture the holistic growth of students. The awards celebrate institutions that integrate life skills, values, and innovation into education, preparing students not just for exams, but for life. They recognise schools as change-makers and mentors of change, inspiring students to lead with empathy, integrity, resilience, and responsibility towards society. Through this initiative, GSSA seeks to build a global movement and purpose-driven, value-based education, where marks may fade but values last for life. ✨ This positioning ensures the awards stand not just as a recognition program, but as a movement towards value-based, future-ready education across the globe.`,
         },
         {
-          title: "Awards",
-          desc: "EdVantage The Transformative Educator Award – celebrating impact beyond the classroom",
+          title: "Award as a Movement",
+          desc: "EdVantage Global School Summit & Awards 2025 is more than recognition—it’s a nationwide movement celebrating schools that nurture values, life skills, and innovation, preparing students not just for exams, but for life.",
         },
         {
           title: "Organisers & NGO",
-          desc: "EdVantage 360 Solutions\nEmail: edvantage360.info@gmail.com\nPhone: 8700356606\nWebsite: https://edvantage360solution.netlify.app\n\nHope & Care Foundation\nWebsite: https://thehopecarefoundation.org",
+          email: "edvantage360.info@gmail.com",
+          phone: "+91 8700356606",
+          website: "https://edvantage360solution.netlify.app",
+          foundation: {
+            name: "Hope & Care Foundation (In Collaboration with Orange House)",
+            website: "https://thehopecarefoundation.org",
+          },
         },
       ],
     },
@@ -78,7 +81,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
 
 📌 Last Date of Registration: 7th November 2025
 📌 For queries: edvantage360.info@gmail.com | +91 8700356606`,
-      src: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/formResponse",
+      src: "https://docs.google.com/forms/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/viewform",
       height: 1500,
     },
   };
@@ -141,17 +144,19 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         cta={eventData.ctaButton}
       />
       <HeroBanner {...eventData.banner} />
-      {/* <AwardsList /> */}
-      {/* <ProcessPage /> */}
       <AboutSection
         mainTitle={eventData.about.eventTitle}
         subTitle={eventData.about.edition}
         tagline={eventData.about.dateAndVenue}
         sections={eventData.about.sections}
       />
-      <BenefitsSection />
-      {/* <SubmissionProcess /> */}
-      {/* <RegistrationCard /> */}
+      <div className="flex bg-black justify-center md:justify-start">
+        <img
+          src="pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
+          alt="Trophy"
+          className="w-72 md:w-[400px] drop-shadow-2xl"
+        />
+      </div>
       <section className="w-full flex flex-col items-center bg-black text-gray-200 p-6">
         <h2 className="text-3xl font-bold mb-4 text-center text-yellow-400">
           {eventData.registrationForm.title}
@@ -170,7 +175,6 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
           title="EdVantage Registration Form"
         />
       </section>
-
       <EventFooter footerData={footerData} />
     </div>
   );
