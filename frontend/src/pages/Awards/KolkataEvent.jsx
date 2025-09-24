@@ -49,7 +49,7 @@ const KolkataEvent = () => {
       dateAndVenue:
         "National Conclave on Life Skill, Value Education & Child Safeguarding ",
       newTagLine:
-        "Not Just Another Conclave – Education Reimagined” (In Collaboration with Orange House)",
+        "Not Just Another Conclave – Education Reimagined (In Collaboration with Orange House)",
 
       sections: [
         {

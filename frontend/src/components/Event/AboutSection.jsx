@@ -22,7 +22,7 @@ export default function AboutSection({
           </p>
         )}
 
-        <h3 className="text-lg font-semibold mb-3 text-yellow-400">
+        <h3 className="text-lg font-[italiyan] mb-3 text-yellow-400">
           {newTagLine}
         </h3>
 
