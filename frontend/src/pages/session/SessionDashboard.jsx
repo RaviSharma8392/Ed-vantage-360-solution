@@ -59,12 +59,8 @@ const EventDashboard = () => {
     <div className="p-8 bg-gray-100 min-h-screen">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-          Event Dashboard
-        </h1>
-        <p className="mt-3 text-lg text-gray-600">
-          Manage and explore all your events in one place
-        </p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900"></h1>
+        <p className="mt-3 text-lg text-gray-600"></p>
       </div>
 
       {/* Event Grid */}
