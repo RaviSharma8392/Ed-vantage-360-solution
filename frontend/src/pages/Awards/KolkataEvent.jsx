@@ -1,14 +1,34 @@
-import React from "react";
 import AboutSection from "../../components/Event/AboutSection";
 import EventNavbar from "../../components/Event/EventNavbar";
 import HeroBanner from "../../components/Event/HeroBanner";
 import EventFooter from "../../components/Event/Footer/EventFooter";
+import PastEditions from "../../components/Event/PastEditions";
 
 const KolkataEvent = () => {
+  const pastMedia = {
+    images: [
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758961920/5affe09a-be1e-44e6-acfd-a2a8ad72d26d_rd4tlq.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758962270/5db41e3d-9e98-48cb-b9d0-8205d1a36e98_bsnbi9.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758962016/dde2941e-9525-465b-afae-1678e27a3f72_ask6j7.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758962030/4eba1d78-bde6-491e-b8d3-b5e1fd1bc7b6_q6xi25.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758961981/31ab59b1-ad7c-4a15-a9c7-fa692664ddd5_ptm14e.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758961959/02dc942e-02d5-46ca-88db-23e45c7b9bc3_fzg9ho.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758962040/c2eb64ed-e707-4026-91a3-6aa40061a414_v0tmcl.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758961938/76fab571-b7f7-43e7-9bb5-105e993d224e_ledvs2.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758961951/2981fc5f-e94e-4aa4-b789-20b168888a72_rhul2e.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758980241/3ab0e793-ef03-4b0d-a0f3-6257b1709aca_clqahy.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758980262/46d74d42-1e96-44b7-bc41-d92baf61f179_plpwhd.jpg",
+      "https://res.cloudinary.com/dbcciugyn/image/upload/v1758980300/5a9737ee-98b6-4bac-b76d-c4cf3abe9d7c_hj4ww8.jpg",
+    ],
+    videos: [
+      "      https://www.youtube.com/embed/PuMVzdeVpkk?si=zoTtbz57x7EHqBTd",
+      "https://www.youtube.com/embed/htq-NfTpRvU?si=DlQbVWHkIrq5PGhz",
+    ],
+  };
   const eventData = {
     logoSrc: "/LOGO[1].png",
     navLinks: [
-      { name: "Home", href: "#" },
+      { name: "Home", href: "/" },
       { name: "About", href: "#about" },
       { name: "Awards", href: "#awards" },
       { name: "Contact", href: "#contact" },
@@ -147,6 +167,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         cta={eventData.ctaButton}
       />
       <HeroBanner {...eventData.banner} />
+      <PastEditions media={pastMedia} />
       <AboutSection
         mainTitle={eventData.about.eventTitle}
         subTitle={eventData.about.edition}

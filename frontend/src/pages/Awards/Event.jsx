@@ -14,7 +14,7 @@ const Events = () => {
   const eventData = {
     logoSrc: "/LOGO[1].png",
     navLinks: [
-      { name: "Home", href: "#" },
+      { name: "Home", href: "/" },
       { name: "About", href: "#about" },
       { name: "Awards", href: "#awards" },
       { name: "Contact", href: "#contact" },

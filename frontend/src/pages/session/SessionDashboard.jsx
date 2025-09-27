@@ -1,131 +1,82 @@
-// src/pages/User/EventDashboard.jsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-// Components
-import TimeTabs from "../../components/Sessions/TimeTabs";
-import EventCard from "../../components/common/EventCard";
+const events = [
+  {
+    title: "EdVantage Global School Summit & Awards 2025 (GSSA)",
+    date: "26th October 2025",
+    description:
+      "Recognising schools as catalysts of transformation—shaping character, inspiring innovation, and building inclusive, future-ready communities.",
+    image: "https://edvantage360solution.netlify.app/image.png",
+    link: "https://edvantage360solution.netlify.app/GSSA",
+  },
+  {
+    title: "EdVantage Education Laureates Awards 2025 – 3rd Edition",
+    date: "15th November 2025",
+    description:
+      "Recognising schools as catalysts of transformation—shaping character, inspiring innovation, and building inclusive, future-ready communities.",
+    image:
+      "https://edvantage360solution.netlify.app/8e5417a5-bcec-4981-b8f9-b74ad3710d97.jpeg",
+    link: "https://edvantage360solution.netlify.app/ela-kolkata-edition",
+  },
+];
 
-// API service
-import { getEvents } from "../../service/eventService";
+// Event Card Component
+const EventCard = ({ event }) => (
+  <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 group">
+    {/* Event Image */}
+    <img
+      src={event.image}
+      alt={event.title}
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+
+    {/* Overlay Content */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
+      <h2 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition">
+        {event.title}
+      </h2>
+      <p className="text-gray-200 text-sm mb-2">{event.date}</p>
+      <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+        {event.description}
+      </p>
+
+      {event.link && (
+        <a
+          href={event.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition">
+          View Details
+        </a>
+      )}
+    </div>
+  </div>
+);
 
 const EventDashboard = () => {
-  const [activeTab, setActiveTab] = useState("upcoming");
-  const [events, setEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  // Fetch events
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        setLoading(true);
-        const data = await getEvents();
-        setEvents(data);
-      } catch (err) {
-        setError("Failed to load events. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEvents();
-  }, []);
-
-  // Apply filters
-  useEffect(() => {
-    let filtered = [...events];
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-    if (activeTab === "today") {
-      filtered = filtered.filter(
-        (event) => new Date(event.date).toDateString() === today.toDateString()
-      );
-    } else if (activeTab === "upcoming") {
-      filtered = filtered.filter((event) => new Date(event.date) >= today);
-    } else if (activeTab === "past") {
-      filtered = filtered.filter((event) => new Date(event.date) < today);
-    }
-
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (event) =>
-          event.title.toLowerCase().includes(query) ||
-          event.description.toLowerCase().includes(query)
-      );
-    }
-
-    setFilteredEvents(filtered);
-  }, [events, activeTab, searchQuery]);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6 sm:px-6 sm:py-8 text-center sm:text-left">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
-            Event Dashboard
-          </h1>
-          <p className="text-gray-600 mt-2 sm:mt-3 text-sm sm:text-base">
-            Explore and join our events
-          </p>
-        </div>
+    <div className="p-8 bg-gray-100 min-h-screen">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+          Event Dashboard
+        </h1>
+        <p className="mt-3 text-lg text-gray-600">
+          Manage and explore all your events in one place
+        </p>
       </div>
 
-      {/* Search & Tabs */}
-      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search events..."
-            className="w-full sm:w-64 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
-          />
-          <TimeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      {/* Event Grid */}
+      {events?.length > 0 ? (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {events.map((event, i) => (
+            <EventCard key={i} event={event} />
+          ))}
         </div>
-
-        {/* Content */}
-        {loading ? (
-          <div className="text-center text-gray-600 py-12">
-            Loading events...
-          </div>
-        ) : error ? (
-          <div className="text-center text-red-600 py-12">{error}</div>
-        ) : filteredEvents.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredEvents.map((event) => (
-              <EventCard key={event._id} event={event} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <div className="inline-flex items-center justify-center rounded-full bg-indigo-100 p-4 mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 text-indigo-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-medium text-gray-800 mb-2">
-              No events found
-            </h3>
-            <p className="text-gray-600">
-              Try adjusting your search or switch tabs to see events
-            </p>
-          </div>
-        )}
-      </div>
+      ) : (
+        <p className="text-center text-gray-500">No events available.</p>
+      )}
     </div>
   );
 };

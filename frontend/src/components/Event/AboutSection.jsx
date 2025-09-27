@@ -64,7 +64,7 @@ export default function AboutSection({
                       </p>
                     )}
                     {sec.phone && (
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300   leading-relaxed">
                         📞 Phone: {sec.phone}
                       </p>
                     )}
