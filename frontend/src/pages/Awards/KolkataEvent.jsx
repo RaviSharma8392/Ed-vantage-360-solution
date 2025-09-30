@@ -103,7 +103,7 @@ const KolkataEvent = () => {
 Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Character, Inspiring Innovation, and Building Inclusive, Future-Ready Communities.”
 
 📌 Last Date of Registration: 15th November 2025
-📌 For queries: edvantage360.info@gmail.com | +91 8700356606`,
+📌 For queries: edvantage360.info@gmail.com | +91 97349 99961`,
       src: "https://docs.google.com/forms/d/e/1FAIpQLSerE1V-Ns0ftY8NSODYE09ZrWVgO_IxRyevcFyf6Yq6_5E1rA/viewform",
       height: 1500,
     },
@@ -133,7 +133,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         value: "edvantage360.info@gmail.com",
         href: "mailto:edvantage360.info@gmail.com",
       },
-      { type: "phone", value: "+91 8700356606 / +91 9813198272" },
+      { type: "phone", value: "+91 8700356606 / +91 97349 99961" },
       {
         type: "website",
         value: "edvantage360solution.netlify.app",

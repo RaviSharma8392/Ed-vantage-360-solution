@@ -129,7 +129,7 @@ const Footer = () => {
               <a
                 href="tel:+918700356606"
                 className="text-gray-600 hover:text-green-600 hover:underline transition-colors">
-                +91 8700356606, +91 9813198272,+91 8700356606
+                +91 8700356606,+91 97349 99961
               </a>
             </div>
             <div className="flex items-center gap-3">
