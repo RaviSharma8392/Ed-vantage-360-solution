@@ -26,7 +26,7 @@ const Events = () => {
     },
     bannerData: {
       backgroundImage: "/image.png",
-      title: "EdVantage Education Laureates Awards 2025 – 3rd Edition",
+      title: "EdVantage Global School Summit & Awards 2025 (GSSA)",
       tagline:
         "In Collaboration with Orange House | 15th November 2025 | Tollygunj Club, Kolkata",
       multilingualTexts: [
@@ -108,7 +108,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
           value: "edvantage360.info@gmail.com",
           href: "mailto:edvantage360.info@gmail.com",
         },
-        { type: "phone", value: "+91 8700356606 / +91 9813198272" },
+        { type: "phone", value: "+91 8700356606 / +91 97349 99961" },
         {
           type: "website",
           value: "edvantage360solution.netlify.app",
