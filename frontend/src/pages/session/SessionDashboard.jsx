@@ -20,7 +20,7 @@ const EventDashboard = () => {
       download: true,
       header: true,
       complete: function (results) {
-        console.log("CSV Data:", results.data);
+        // console.log("CSV Data:", results.data);
         setEvents(results.data.filter((e) => e.title)); // filter empty rows
       },
       error: function (err) {
@@ -69,7 +69,7 @@ const EventDashboard = () => {
       {currentEvents.length > 0 ? (
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {currentEvents.map((event, i) => (
-            <EventCard key={i} event={event} upcomingEvents={upcomingEvents} />
+            <EventCard key={i} event={event} activeTab={activeTab} />
           ))}
         </div>
       ) : (

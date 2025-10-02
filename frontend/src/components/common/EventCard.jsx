@@ -8,11 +8,11 @@ const parseEventDate = (dateStr) => {
   return isNaN(date) ? null : date;
 };
 
-const EventCard = ({ event, upcomingEvents }) => {
+const EventCard = ({ event, activeTab }) => {
   const [imageError, setImageError] = useState(false);
   const imgSrc =
     imageError || !event.image ? "/placeholder-event.jpg" : event.image;
-
+  console.log(activeTab);
   const eventDate = parseEventDate(event.date);
 
   return (
@@ -39,11 +39,11 @@ const EventCard = ({ event, upcomingEvents }) => {
         {/* Status badge */}
         <div
           className={`absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full shadow-sm ${
-            upcomingEvents
+            activeTab === "upcoming"
               ? "bg-green-600 text-white"
               : "bg-gray-500 text-white"
           }`}>
-          {upcomingEvents ? "Upcoming" : "Past"}
+          {activeTab === "upcoming" ? "upcoming" : "past"}
         </div>
       </div>
 
@@ -68,7 +68,7 @@ const EventCard = ({ event, upcomingEvents }) => {
               View Details
             </a>
           )}
-          {upcomingEvents && event.form && (
+          {activeTab === "upcoming" && event.form && (
             <a
               href={event.form}
               target="_blank"
