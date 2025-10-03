@@ -26,7 +26,7 @@ export default function HeroBanner({
 
         {/*  Title */}
 
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-xl font-sans">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-xl font-sans">
           {title}
         </h1>
 

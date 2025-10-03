@@ -12,7 +12,7 @@ const EventCard = ({ event, activeTab }) => {
   const [imageError, setImageError] = useState(false);
   const imgSrc =
     imageError || !event.image ? "/placeholder-event.jpg" : event.image;
-  console.log(activeTab);
+  // console.log(activeTab);
   const eventDate = parseEventDate(event.date);
 
   return (

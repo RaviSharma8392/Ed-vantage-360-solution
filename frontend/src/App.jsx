@@ -30,7 +30,9 @@ import Events from "./pages/Awards/Event";
 import EventDashboard from "./pages/session/SessionDashboard";
 import PopupRedirect from "./Popup/Popup";
 import AdminEvents from "./screen/AdminEvent";
+DubaiEvents;
 import KolkataEvent from "./pages/Awards/KolkataEvent";
+import DubaiEvents from "./pages/Awards/DubaiEvents";
 
 const App = () => {
   const location = useLocation();
@@ -44,7 +46,7 @@ const App = () => {
         {/* Public Routes */}
         <Route path="/GSSA" element={<Events />} />
         <Route path="/ela-kolkata-edition" element={<KolkataEvent />} />
-
+        <Route path="/GSLSA" element={<DubaiEvents />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
@@ -52,7 +54,6 @@ const App = () => {
         <Route path="/cookies" element={<CookiePrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/adminevent" element={<AdminEvents />} />
-
         {/* User Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -64,7 +65,6 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="pricing" element={<PricingPage />} />
         </Route>
-
         {/* Admin Layout */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />

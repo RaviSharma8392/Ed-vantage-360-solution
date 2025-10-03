@@ -1,6 +1,6 @@
 import React from "react";
 import HeroBanner from "../../components/Event/HeroBanner";
-import AwardsList from "../../components/Event/AwardsList";
+import EventAward from "../../components/Event/AwardsList";
 import EventFooter from "../../components/Event/Footer/EventFooter";
 import EventNavbar from "../../components/Event/EventNavbar";
 import AboutPage from "../../components/Event/AboutSection";
@@ -8,9 +8,72 @@ import ProcessPage from "./ProcessPage";
 import BenefitsSection from "../../components/Event/Benefit/BenefitsSection";
 import RegistrationCard from "../../components/Event/Ragistration/RegistrationCard";
 import SubmissionProcess from "../../components/Event/VenueLocations/VenueLocations";
+import { Award, BookOpen, Briefcase, Star, Users } from "lucide-react";
 
 const Events = () => {
-  // Unified event data
+  /** ------------------------------
+   * Registration Card Details
+   * ------------------------------ */
+  const RagistrationCardDetails = {
+    header: {
+      title: "EdVantage Global School Summit & Awards 2025",
+      tagline: '"Education with Purpose, Values for Life"',
+    },
+    registration: {
+      sectionTitle: "School Registration",
+      description: "Join us in recognizing schools that go beyond academics...",
+      detailsTitle: "Registration Details",
+      fee: "₹11,000 per school",
+      registrationDeadline: "25th September 2025",
+      submissionDeadline: "30th September 2025",
+    },
+    awards: {
+      title: "Awards Ceremony",
+      date: "26th October 2025",
+      venues: ["New Delhi", "Abu Dhabi"],
+      note: "Charges Applicable (for Abu Dhabi will be shared after receiving the form)",
+    },
+    submission: {
+      title: "Submission Requirements",
+      items: [
+        "Statement of Purpose (max 500 words)",
+        "Evidence of Achievement (photos, certificates, videos, testimonials)",
+        "Project reports and NGO internship details",
+      ],
+    },
+    note: "Payment confirmation must be uploaded along with the Google Form submission.",
+    links: {
+      form: "https://forms.gle/BfuSZkmqVTYWknby8",
+      formText: "Register via Google Form",
+      contact: "edvantage360.info@gmail.com",
+      contactText: "Contact for Queries",
+    },
+    payment: {
+      title: "Payment QR Code",
+      subtitle: "Scan to complete payment",
+      qrSrc: "/qr.png",
+    },
+    neft: {
+      title: "NEFT Details",
+      details: {
+        Bank: "Bank of Baroda",
+        "Account No": "96250200001416",
+        "Account Holder": "EDVANTAGE 360 SOLUTIONS",
+        IFSC: "BARB0DBBAHA",
+      },
+    },
+    venues: {
+      title: "Venue Details",
+      items: [
+        "New Delhi",
+        "Abu Dhabi — Charges Applicable (will be mentioned after receiving the form)",
+      ],
+    },
+  };
+
+  /** ------------------------------
+   * Event Data
+   * ------------------------------ */
   const eventData = {
     logoSrc: "/LOGO[1].png",
     navLinks: [
@@ -50,7 +113,6 @@ const Events = () => {
     },
     aboutData: {
       mainTitle: "About EdVantage Global School Summit",
-      // subTitle: "3rd Edition – Kolkata – 15th November 2025",
       tagline:
         "शिक्षा और संस्कार पुरस्कार\n\n“Education with Purpose, Values for Life”",
       sections: [
@@ -72,7 +134,6 @@ const Events = () => {
         },
       ],
     },
-
     registrationForm: {
       title:
         "EdVantage Education Laureates Awards 2025 – 3rd Edition (Kolkata)",
@@ -136,6 +197,113 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
     },
   };
 
+  /** ------------------------------
+   * Awards Data
+   * ------------------------------ */
+  const schoolAwardsData = {
+    header: {
+      title: "EdVantage Global School Summit & Awards 2025",
+      subtitle: "Honoring schools that inspire transformation and innovation.",
+    },
+    categories: [
+      {
+        title: "For Schools",
+        awards: [
+          "EdVantage Life Skills Excellence School Award – Shaping Students for Life, Not Just Exams",
+          "EdVantage Community Impact School Award – Educating Beyond Classrooms",
+          "EdVantage Innovation in Education Award – Teaching with a Difference",
+          "EdVantage Holistic Development Champion Award – Balancing Mind, Body & Soul",
+          "EdVantage Best Mentorship & Guidance School Award – Guiding the Path to Greatness",
+          "EdVantage Sustainable Development Champion Award – Building a Better Tomorrow Today",
+          "EdVantage Green School Award – Learning in Harmony with Nature",
+          "EdVantage Social Service Leadership Award – Service Above Self",
+          "EdVantage Digital Learning Excellence Award – Empowering Students in the Digital Age",
+          "EdVantage Cultural Heritage & Values Award – Rooted in Tradition, Ready for the Future",
+          "EdVantage Student Well-being & Inclusion Award – A School for Every Child.",
+          "EdVantage Value Education Excellence Award – Instilling Ethics & Morals for Life",
+          "EdVantage Emotional Intelligence Champion Award – Nurturing Hearts, Not Just Minds",
+          "EdVantage Global Citizenship School Award – Preparing Students for the World Stage",
+          "EdVantage Health & Fitness Excellence Award – Strong Bodies, Strong Minds",
+          "EdVantage Safety & Security Excellence Award – Ensuring Safe Havens for Learning",
+          "EdVantage Innovative Co-Curricular Integration Award – Blending Learning Beyond Books",
+          "EdVantage Teacher Empowerment Award – Strengthening Educators, Enriching Futures",
+          "EdVantage Parental Engagement Excellence Award – Building Strong School-Home Partnerships",
+          "EdVantage Inclusive Growth Award – Leaving No Child Behind",
+        ],
+      },
+    ],
+  };
+
+  // Benefits Data
+  const benefits = [
+    {
+      icon: <Award className="w-8 h-8 text-yellow-400" />,
+      title: "Plaque + Certificate",
+      desc: "Schools receive a plaque, certificate, and national recognition on EdVantage 360 platforms.",
+    },
+    {
+      icon: <BookOpen className="w-8 h-8 text-yellow-400" />,
+      title: "Life Skill Training",
+      desc: "Exclusive student life skill training sessions as part of the award recognition.",
+    },
+    {
+      icon: <Users className="w-8 h-8 text-yellow-400" />,
+      title: "NGO Partnerships",
+      desc: "Collaboration with NGOs for internships and impactful social service programmes.",
+    },
+    {
+      icon: <Briefcase className="w-8 h-8 text-yellow-400" />,
+      title: "Career Fairs",
+      desc: "Awarded schools gain access to curated career fairs for student growth.",
+    },
+    {
+      icon: <Star className="w-8 h-8 text-yellow-400" />,
+      title: "Leadership Training",
+      desc: "Special leadership training programmes designed for students of the awarded schools.",
+    },
+  ];
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "EdVantage Global School Summit & Awards 2025",
+    description:
+      "Celebrating Excellence Beyond Borders. Recognizing schools with Plaque, Certificate, National Recognition, Life Skill Training, NGO Partnerships, Career Fairs, and Leadership Training.",
+    eventType: "Education & Awards Summit",
+    startDate: "2025-12-04",
+    endDate: "2025-12-07",
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: "Abu Dhabi, UAE",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Venue Address Here",
+        addressLocality: "Abu Dhabi",
+        addressRegion: "UAE",
+        postalCode: "00000",
+        addressCountry: "AE",
+      },
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "EdVantage 360",
+      url: "https://edvantage360.com",
+    },
+    offers: {
+      "@type": "Offer",
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSe9ZvvFmEIrTS0V0iJfoF_PFku50-1_xgwNDDXjfFIeZZH6YQ/viewform",
+      price: "0",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      validFrom: "2025-01-01",
+    },
+  };
+
+  const summary =
+    "• Plaque + Certificate + Recognition on EdVantage 360 Platforms + Life Skill Training Sessions for students + Partnership with NGOs for internships & Social Impact programmes + Career Fairs in the schools + Student Leadership Training for the school.";
+
   return (
     <div>
       {/* Navbar */}
@@ -149,7 +317,7 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
       <HeroBanner {...eventData.bannerData} />
 
       {/* Awards */}
-      <AwardsList />
+      <EventAward data={schoolAwardsData} />
 
       {/* Process */}
       <ProcessPage />
@@ -162,23 +330,23 @@ Theme: “Recognising Leaders as Catalysts of Transformation – Shaping Charact
         sections={eventData.aboutData.sections}
       />
 
-      {/* Benefits */}
-      <BenefitsSection />
-
-      {/* Submission */}
+      {/* Benefits Section */}
+      <BenefitsSection
+        benefits={benefits}
+        schemaData={schemaData}
+        title="Benefits Of The Awards"
+        image="pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
+        summary={summary}
+        buttonLink={eventData.ctaButton.href}
+      />
+      {/* Submission Process */}
       <SubmissionProcess />
 
       {/* Registration Card */}
-      <RegistrationCard />
+      <RegistrationCard data={RagistrationCardDetails} />
 
       {/* Google Form */}
       <section className="w-full flex flex-col items-center bg-gray-100 p-6">
-        {/* <h2 className="text-3xl font-bold mb-4 text-center">
-          {eventData.registrationForm.title}
-        </h2>
-        <p className="text-gray-700 mb-6 text-center whitespace-pre-line">
-          {eventData.registrationForm.description}
-        </p> */}
         <iframe
           src={eventData.registrationForm.src}
           width="100%"
