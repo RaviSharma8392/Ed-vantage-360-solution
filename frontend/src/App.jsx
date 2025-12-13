@@ -33,6 +33,8 @@ import AdminEvents from "./screen/AdminEvent";
 DubaiEvents;
 import KolkataEvent from "./pages/Awards/KolkataEvent";
 import DubaiEvents from "./pages/Awards/DubaiEvents";
+import Calc from "./Calc";
+import TechStarAwards from "./pages/Awards/Noida_Event4thEdition";
 
 const App = () => {
   const location = useLocation();
@@ -46,6 +48,9 @@ const App = () => {
         {/* Public Routes */}
         <Route path="/GSSA" element={<Events />} />
         <Route path="/ela-kolkata-edition" element={<KolkataEvent />} />
+        {/* added 4th edition */}
+        <Route path="/ELTSA" element={<TechStarAwards />} />
+
         <Route path="/GSLSA" element={<DubaiEvents />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
@@ -64,6 +69,7 @@ const App = () => {
           <Route path="services" element={<ServiceComponent />} />
           <Route path="contact" element={<Contact />} />
           <Route path="pricing" element={<PricingPage />} />
+          <Route path="calc" element={<Calc />} />
         </Route>
         {/* Admin Layout */}
         <Route path="/admin" element={<AdminLayout />}>
