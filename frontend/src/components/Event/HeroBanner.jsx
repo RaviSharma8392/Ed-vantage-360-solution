@@ -1,18 +1,9 @@
-import React from "react";
-
-export default function HeroBanner({
-  foundation,
-  backgroundImage,
-  title,
-  tagline,
-  multilingualTexts = [],
-  buttons = [],
-}) {
+export default function HeroBanner({ data, buttons }) {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <img
-        src={backgroundImage}
+        src={data.backgroundImage}
         alt="Hero Banner"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -22,30 +13,30 @@ export default function HeroBanner({
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 md:px-8">
-        {/* Main Title */}
-
         {/*  Title */}
 
         <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-xl font-sans">
-          {title}
+          {data.title}
         </h1>
 
         {/* Tagline */}
-        {tagline && (
+        {data.tagline && (
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl italic font-light text-gray-200 mb-8 max-w-3xl mx-auto">
-            <span className="text-yellow-400 font-semibold">{tagline}</span>
+            <span className="text-yellow-400 font-semibold">
+              {data.tagline}
+            </span>
           </p>
         )}
-        {foundation && (
+        {data.foundation && (
           <h1 className="space-y-1 text-sm sm:text-base md:text-lg text-gray-300 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-            {foundation}
+            {data.foundation}
           </h1>
         )}
 
         {/* Multilingual */}
-        {multilingualTexts.length > 0 && (
+        {data.multilingualTexts.length > 0 && (
           <div className="space-y-1 text-sm sm:text-base md:text-lg text-gray-300 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-            {multilingualTexts.map((text, idx) => (
+            {data.multilingualTexts.map((text, idx) => (
               <p key={idx}>{text}</p>
             ))}
           </div>

@@ -13,10 +13,11 @@ const teamMembers = [
     },
   },
   {
-    name: "Dr Debolina Sarkar",
+    name: "Shyamaleena Ganguly",
     role: "Board Member",
-    image: "Deboleena Sarkar.jpg",
-    description: "Human Rights Educator ,Guest Faculty, University of Calcutta",
+    image: "Shyamaleena Ganguly.jpg",
+    description:
+      "An experienced educator with over 25 years of experience and expertise in mental well-being, positive psychology, and capacity building, serving as a coach and guidance counsellor",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -54,6 +55,18 @@ const teamMembers = [
     image: "Shivam Bose.jpg",
     description:
       "LLM Environmental Law ,University of Sydney ,Practising Lawyer Delhi High Court",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "mailto:priya@example.com",
+    },
+  },
+  {
+    name: "Soumya Kanti Chowdhuri",
+    role: "Board Member",
+    image: "Soumya Kanti Chowdhuri.jpg",
+    description:
+      "Consultant for development and strategy in renewable energy sector,ex Executive Director of NTPC Green Energy Ltd.",
     social: {
       linkedin: "#",
       twitter: "#",
