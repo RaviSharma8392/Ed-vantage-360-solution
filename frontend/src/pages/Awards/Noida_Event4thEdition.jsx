@@ -43,58 +43,6 @@ const pastMedia = {
     "https://www.youtube.com/embed/htq-NfTpRvU?si=DlQbVWHkIrq5PGhz",
   ],
 };
-// Registration Card Details
-const RagistrationCardDetails = {
-  header: {
-    title: "EdVantage Laureates – Tech Star Awards 2026 4th Edition ",
-    tagline: " Celebrating Excellence in Science, Computer Science, STEM & AI",
-  },
-  registration: {
-    sectionTitle: "School Registration",
-    description: "Join us in recognizing schools that go beyond academics...",
-    detailsTitle: "Registration Details",
-    fee: "₹1,50,000 per school.",
-    registrationDeadline: ": 15th November 2025 ",
-  },
-  awards: {
-    title: "Awards Ceremony",
-    date: "4th – 7th Dec 2025",
-    venues: ["Abu Dhabi"],
-  },
-  submission: {
-    title: "Submission Requirements",
-    items: [
-      "Statement of Purpose (max 500 words)",
-      "Evidence of Achievement (photos, certificates, videos, testimonials)",
-      "Project reports and NGO internship details",
-    ],
-  },
-  note: "Payment confirmation must be uploaded along with the Google Form submission.",
-  links: {
-    form: "https://docs.google.com/forms/d/e/1FAIpQLSe9ZvvFmEIrTS0V0iJfoF_PFku50-1_xgwNDDXjfFIeZZH6YQ/viewform",
-    formText: "Register via Google Form",
-    contact: "edvantage360.info@gmail.com",
-    contactText: "Contact for Queries",
-  },
-  payment: {
-    title: "Payment QR Code",
-    subtitle: "Scan to complete payment",
-    qrSrc: "/qr.png",
-  },
-  neft: {
-    title: "NEFT Details",
-    details: {
-      Bank: "Bank of Baroda",
-      "Account No": "96250200001416",
-      "Account Holder": "EDVANTAGE 360 SOLUTIONS",
-      IFSC: "BARB0DBBAHA",
-    },
-  },
-  venues: {
-    title: "Venue Details",
-    items: ["Abu Dhabi"],
-  },
-};
 
 // Event Data (navbar, banner, about, footer)
 const eventData = {
@@ -356,12 +304,6 @@ const TechStarAwards = () => {
         summary={summary}
         buttonLink={eventData.ctaButton.href}
       />
-
-      {/* Venue / Submission */}
-      {/* <SubmissionProcess /> */}
-
-      {/* Registration Card */}
-      {/* <RegistrationCard data={RagistrationCardDetails} /> */}
 
       {/* Footer */}
       <EventFooter footerData={eventData.footerData} />

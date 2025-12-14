@@ -1,0 +1,98 @@
+{
+  "registrationCardDetails": {
+    "header": {
+      "title": "EdVantage Global School Leaders Summit & Awards 2025, 4th Edition – Abu Dhabi & Dubai",
+      "tagline": "Education with Purpose, Values for Life"
+    },
+    "registration": {
+      "sectionTitle": "School Registration",
+      "description": "Join us in recognizing schools that go beyond academics...",
+      "detailsTitle": "Registration Details",
+      "fee": "₹1,50,000 per school.",
+      "registrationDeadline": "15th November 2025"
+    },
+    "awards": {
+      "title": "Awards Ceremony",
+      "date": "4th – 7th Dec 2025",
+      "venues": ["Abu Dhabi"]
+    },
+    "submission": {
+      "title": "Submission Requirements",
+      "items": [
+        "Statement of Purpose (max 500 words)",
+        "Evidence of Achievement (photos, certificates, videos, testimonials)",
+        "Project reports and NGO internship details"
+      ]
+    },
+    "note": "Payment confirmation must be uploaded along with the Google Form submission.",
+    "links": {
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSe9ZvvFmEIrTS0V0iJfoF_PFku50-1_xgwNDDXjfFIeZZH6YQ/viewform",
+      "contact": "edvantage360.info@gmail.com"
+    },
+    "payment": {
+      "title": "Payment QR Code",
+      "subtitle": "Scan to complete payment",
+      "qrSrc": "/qr.png"
+    },
+    "neft": {
+      "title": "NEFT Details",
+      "details": {
+        "bank": "Bank of Baroda",
+        "accountNo": "96250200001416",
+        "accountHolder": "EDVANTAGE 360 SOLUTIONS",
+        "ifsc": "BARB0DBBAHA"
+      }
+    }
+  },
+
+  "awardData": {
+    "header": {
+      "title": "EdVantage Global School Leaders Summit & Awards 2025",
+      "subtitle": "Celebrating leaders shaping the future of education."
+    },
+    "categories": [
+      {
+        "title": "For Principals",
+        "awards": [
+          "Visionary Principal Leadership Award",
+          "Transformational Principal Award"
+        ]
+      },
+      {
+        "title": "For Teachers",
+        "awards": [
+          "Global Teacher of Excellence Award",
+          "Innovative Teaching Practices Award"
+        ]
+      }
+    ]
+  },
+
+  "benefits": [
+    {
+      "icon": "award",
+      "title": "Plaque + Certificate",
+      "desc": "National recognition on EdVantage platforms."
+    },
+    {
+      "icon": "bookOpen",
+      "title": "Life Skill Training",
+      "desc": "Exclusive student life skill sessions."
+    },
+    {
+      "icon": "users",
+      "title": "NGO Partnerships",
+      "desc": "Internships & social impact programmes."
+    },
+    {
+      "icon": "briefcase",
+      "title": "Career Fairs",
+      "desc": "Curated career fairs in awarded schools."
+    },
+    {
+      "icon": "star",
+      "title": "Leadership Training",
+      "desc": "Special leadership training for students."
+    }
+  ]
+}

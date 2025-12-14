@@ -13,6 +13,17 @@ const teamMembers = [
     },
   },
   {
+    name: "Dr Debolina Sarkar",
+    role: "Board Member",
+    image: "Deboleena Sarkar.jpg",
+    description: "Human Rights Educator ,Guest Faculty, University of Calcutta",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "mailto:amit@example.com",
+    },
+  },
+  {
     name: "Dr.Debika Guha",
     role: "Board Member",
     image: "Debika Guha.jpg",
@@ -24,6 +35,7 @@ const teamMembers = [
       email: "mailto:sneha@example.com",
     },
   },
+
   {
     name: "Hitesh Rana",
     role: "Board Member",
