@@ -50,7 +50,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Shivam Bose",
+    name: "Shivam ",
     role: "Board Member",
     image: "Shivam Bose.jpg",
     description:
