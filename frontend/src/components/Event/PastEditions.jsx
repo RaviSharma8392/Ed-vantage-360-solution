@@ -33,14 +33,14 @@ const PastEditions = ({ media }) => {
   return (
     <div className="p-8 bg-black min-h-screen text-gray-100">
       {/* Heading */}
-      <div className="text-center mb-12">
+      {/* <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-extrabold text-white">
           Past Editions
         </h1>
         <p className="mt-3 text-lg text-gray-400">
           A glimpse into our journey through past events
         </p>
-      </div>
+      </div> */}
 
       {/* Images Section */}
       {media.images?.length > 0 && (
