@@ -40,37 +40,45 @@ const DubaiEvents = () => {
   return (
     <div>
       {/* ===================== Navbar ===================== */}
-      <EventNavbar logoSrc={logoSrc} links={eventNavbar} cta={navbarCta} />
+      {registrationOpen && (
+        <EventNavbar logoSrc={logoSrc} links={eventNavbar} cta={navbarCta} />
+      )}
 
       {/* ===================== Hero Banner ===================== */}
-      <HeroBanner data={eventData.bannerData} buttons={heroButtons} />
+      {registrationOpen && (
+        <HeroBanner data={eventData.bannerData} buttons={heroButtons} />
+      )}
 
       {/* ===================== Past Editions ===================== */}
       <PastEditions media={pastMedia} />
 
       {/* ===================== Awards Section ===================== */}
-      <EventAward data={awardData} />
+      {registrationOpen && <EventAward data={awardData} />}
 
       {/* ===================== About Section ===================== */}
-      <AboutPage
-        sections={aboutData.sections}
-        mainTitle={aboutData.mainTitle}
-        tagline={aboutData.tagline}
-        newTagLine={aboutData.otherTagLine}
-      />
+      {registrationOpen && (
+        <AboutPage
+          sections={aboutData.sections}
+          mainTitle={aboutData.mainTitle}
+          tagline={aboutData.tagline}
+          newTagLine={aboutData.otherTagLine}
+        />
+      )}
 
       {/* ===================== Benefits Section ===================== */}
-      <BenefitsSection
-        title="Benefits Of The Awards"
-        image="/pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
-        benefits={benefits}
-        summary="Plaque, certificate, life skill training, NGO partnerships, career fairs, and leadership programmes."
-        buttonLink={registrationOpen ? registrationConfig.formLink : null}
-        buttonLabel={registrationOpen ? "Register Now" : ""}
-      />
+      {registrationOpen && (
+        <BenefitsSection
+          title="Benefits Of The Awards"
+          image="/pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
+          benefits={benefits}
+          summary="Plaque, certificate, life skill training, NGO partnerships, career fairs, and leadership programmes."
+          buttonLink={registrationOpen ? registrationConfig.formLink : null}
+          buttonLabel={registrationOpen ? "Register Now" : ""}
+        />
+      )}
 
       {/* ===================== Submission Process ===================== */}
-      <SubmissionProcess />
+      {registrationOpen && <SubmissionProcess />}
     </div>
   );
 };

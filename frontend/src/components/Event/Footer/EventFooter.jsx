@@ -21,7 +21,7 @@ const EventFooter = ({ footerData }) => {
   } = footerData;
 
   return (
-    <footer className="bg-black border-t text-gray-300 py-20 px-6 font-[Poppins]">
+    <footer className="bg-black  hidden border-t text-gray-300 py-20 px-6 font-[Poppins]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         {/* Column 1: Logo + About */}
         <div className="flex flex-col gap-4">

@@ -27,55 +27,62 @@ const GSSA = () => {
   return (
     <div>
       {/* Navbar */}
-      <EventNavbar
-        logoSrc={logoSrc}
-        links={eventNavbar}
-        cta={
-          registrationOpen
-            ? eventData.ctaButton
-            : { label: "Registrations Closed" }
-        }
-      />
+      {registrationOpen && (
+        <EventNavbar
+          logoSrc={logoSrc}
+          links={eventNavbar}
+          cta={
+            registrationOpen
+              ? eventData.ctaButton
+              : { label: "Registrations Closed" }
+          }
+        />
+      )}
 
       {/* Hero Banner */}
-      <HeroBanner
-        data={eventData.bannerData}
-        buttons={
-          registrationOpen
-            ? eventData.bannerData.buttons
-            : [
-                { label: "Learn More", href: "#about", primary: false },
-                { label: "Registrations Closed", primary: true },
-              ]
-        }
-      />
+      {registrationOpen && (
+        <HeroBanner
+          data={eventData.bannerData}
+          buttons={
+            registrationOpen
+              ? eventData.bannerData.buttons
+              : [
+                  { label: "Learn More", href: "#about", primary: false },
+                  { label: "Registrations Closed", primary: true },
+                ]
+          }
+        />
+      )}
 
       {/* Always visible sections */}
       <PastEditions media={pastMedia} />
       {/* Awards Section */}
-      <EventAward data={schoolAwardsData} />
+      {registrationOpen && <EventAward data={schoolAwardsData} />}
 
       {/* Process Section */}
       {registrationOpen && <ProcessPage />}
 
       {/* About Section */}
-      <AboutPage
-        sections={aboutData.sections}
-        mainTitle={aboutData.mainTitle}
-        tagline={aboutData.tagline}
-        newTagLine={aboutData.otherTagLine}
-      />
+      {registrationOpen && (
+        <AboutPage
+          sections={aboutData.sections}
+          mainTitle={aboutData.mainTitle}
+          tagline={aboutData.tagline}
+          newTagLine={aboutData.otherTagLine}
+        />
+      )}
 
       {/* Benefits Section */}
-      <BenefitsSection
-        title="Benefits Of The Awards"
-        image="/pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
-        benefits={benefits}
-        summary="Plaque, certificate, life skill training, NGO partnerships, career fairs, and leadership programmes."
-        buttonLink={registrationOpen ? registrationConfig.formLink : null}
-        buttonLabel={registrationOpen ? "Register Now" : ""}
-      />
-
+      {registrationOpen && (
+        <BenefitsSection
+          title="Benefits Of The Awards"
+          image="/pngtree-trophy-gold-high-quality-png-image_15125965-removebg-preview.png"
+          benefits={benefits}
+          summary="Plaque, certificate, life skill training, NGO partnerships, career fairs, and leadership programmes."
+          buttonLink={registrationOpen ? registrationConfig.formLink : null}
+          buttonLabel={registrationOpen ? "Register Now" : ""}
+        />
+      )}
       {/* Submission Process */}
       {registrationOpen && <SubmissionProcess />}
 
