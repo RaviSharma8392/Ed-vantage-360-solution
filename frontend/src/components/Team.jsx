@@ -38,7 +38,7 @@ const teamMembers = [
   },
 
   {
-    name: "Hitesh Rana",
+    name: "Hitesh",
     role: "Board Member",
     image: "Hitesh Rana.jpg",
     description:
