@@ -62,7 +62,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Soumya Kanti Chowdhuri",
+    name: "Soumya Kanti ",
     role: "Board Member",
     image: "Soumya Kanti Chowdhuri.jpg",
     description:
