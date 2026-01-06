@@ -20,7 +20,6 @@ import Careers from "../components/Careers";
 
 // Others
 import EventDashboard from "../pages/session/SessionDashboard";
-import Calc from "../Calc";
 
 const UserRoutes = () => {
   return (
@@ -44,7 +43,6 @@ const UserRoutes = () => {
         <Route path="services" element={<ServiceComponent />} />
         <Route path="contact" element={<Contact />} />
         <Route path="pricing" element={<PricingPage />} />
-        <Route path="calc" element={<Calc />} />
       </Route>
     </Routes>
   );
