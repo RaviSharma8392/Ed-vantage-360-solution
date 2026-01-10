@@ -68,7 +68,6 @@ import { useState, useEffect } from "react";
 export default function PopupImageRedirect() {
   const [open, setOpen] = useState(false);
 
-  // Open popup once when component mounts
   useEffect(() => {
     setOpen(true);
   }, []);
@@ -76,12 +75,16 @@ export default function PopupImageRedirect() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-8">
       <div className="relative w-full max-w-md rounded-2xl bg-white shadow-2xl overflow-hidden">
-        {/* Close button */}
+        {/* Smaller Close button */}
         <button
           onClick={() => setOpen(false)}
-          className="absolute right-3 top-3 text-white bg-gray-800/60 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-900 transition">
+          className="absolute right-2 md:top-15 w-6 h-6 text-xs 
+                     flex items-center justify-center
+                     rounded-full bg-black/60 text-white
+                     hover:bg-black transition"
+          aria-label="Close popup">
           ✕
         </button>
 
