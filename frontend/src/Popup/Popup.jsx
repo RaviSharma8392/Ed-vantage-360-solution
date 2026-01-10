@@ -94,7 +94,7 @@ export default function PopupImageRedirect() {
           target="_blank"
           rel="noopener noreferrer">
           <img
-            src="/7c22333e-ebfe-45f5-a68e-ee822fcb445b.jpg"
+            src="/3841972c-8765-4084-8ca1-1ed024272793-md.jpeg"
             alt="Popup Banner"
             className="w-full h-auto object-cover"
           />
